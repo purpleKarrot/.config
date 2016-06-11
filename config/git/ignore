@@ -1,0 +1,20 @@
+# cmake build directory
+/build/
+
+# node.js
+/node_modules/
+
+# Created by QtCreator
+*.pro.user
+CMakeLists.txt.user
+
+# Eclipse
+/.cproject
+/.project
+/.settings
+
+# Python
+*.pyc
+
+# Temporary Files
+*~

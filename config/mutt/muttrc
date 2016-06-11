@@ -1,0 +1,23 @@
+
+#source $XDG_CONFIG_HOME/mutt-colors-solarized-dark-16.muttrc
+
+set folder = $XDG_CACHE_HOME/mail
+set header_cache = $XDG_CACHE_HOME/mutt/headers
+set message_cachedir = $XDG_DATA_HOME/mutt/messages
+set mailcap_path = $XDG_CONFIG_HOME/mutt/mailcap
+set record = $XDG_DATA_HOME/mutt/record/sent
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+bind attach <return> view-mailcap
+
+set spoolfile = "+bloks/INBOX"
+
+mailboxes +---Personal--- \
+          +gmail/INBOX \
+          +gmail/sent \
+          +gmail/drafts \
+          +---BLOKS.--- \
+          +bloks/INBOX \
+          +bloks/sent \
+          +bloks/drafts

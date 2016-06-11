@@ -1,0 +1,9 @@
+[Unit]
+Description=Hourly CMake CI Build
+
+[Timer]
+OnCalendar=hourly
+Persistent=false
+
+[Install]
+WantedBy=timers.target

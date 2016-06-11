@@ -1,0 +1,67 @@
+download-path "/home/gregf/media/videos/podcasts/"
+max-downloads 3
+podcast-auto-enqueue no
+
+browser chromium
+player mplayer
+
+auto-reload yes
+suppress-first-reload yes
+reload-time 60
+refresh-on-startup no
+confirm-exit no
+reload-threads 4
+show-read-feeds  no
+show-read-articles  no
+notify-xterm yes
+notify-screen yes
+always-display-description true
+
+article-sort-order date-asc
+cleanup-on-quit yes
+display-article-progress yes
+goto-first-unread yes
+goto-next-feed no
+notify-program notify-send
+notify-always no
+notify-format "newsbeuter: finished reload, %f unread feeds (%n unread articles total)"
+delete-read-articles-on-quit no
+
+#
+# Custom Bindings
+#
+bind-key e open-in-browser-and-mark-read
+bind-key a mark-feed-read
+
+#
+# vimlike bindings
+#
+unbind-key ^B
+bind-key ^B pageup
+unbind-key ^F
+bind-key ^F pagedown
+bind-key k up
+bind-key j down
+bind-key q quit
+bind-key d mark-feed-read
+bind-key D mark-all-feeds-read
+unbind-key l
+bind-key l open
+bind-key m toggle-show-read-feeds
+unbind-key n
+bind-key n next-unread-feed
+unbind-key p
+bind-key p prev-unread-feed
+
+#
+# Colors
+#
+color article             white   default
+color background          white   default
+color listnormal          white   default
+color listnormal_unread   white   default  bold
+color listfocus           white   black
+color listfocus_unread    white   black    bold
+color info                yellow  default  bold
+
+highlight article     "^(Feed|Title|Author|Link|Date):"  red    default  bold

@@ -1,0 +1,11 @@
+[settings]
+
+# Determines whether or not developer tools, such as the Web Inspector,
+# are enabled.
+enable-developer-extras = true
+
+#user-agent = Test user ageng
+
+[prefetch-dns]
+github.com =
+google.com =

@@ -1,0 +1,17 @@
+!.gitignore
+Atom/
+QtProject.conf
+QtProject/
+Trolltech.conf
+VirtualBox/
+chromium/
+composer/
+dconf/
+enchant/
+git/gitk
+gtk-2.0/
+hub
+menus/
+mimeapps.list
+pavucontrol.ini
+pulse/

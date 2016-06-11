@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# work around display glitches
+export SWT_GTK3=0
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+# Set Wallpaper
+if [ ! -f "$XDG_CACHE_HOME"/wallpaper.jpg ]
+then
+  convert "$XDG_CONFIG_HOME"/wallpaper.svg \
+    -resize "$(xrandr|grep '*'|awk '{print $1}')<" \
+    -quality 100 \
+    "$XDG_CACHE_HOME"/wallpaper.jpg
+fi
+feh --no-fehbg --bg-fill "$XDG_CACHE_HOME"/wallpaper.jpg
+
+# Network Manager applet
+>> /dev/null which nm-applet && nm-applet &
+>> /dev/null which blueman-applet && blueman-applet &
+
+# Pidgin
+>> /dev/null pidgin &

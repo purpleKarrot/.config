@@ -1,0 +1,22 @@
+#
+# Comics
+#
+http://xkcd.org/rss.xml comics
+
+#
+# IT News
+#
+http://rss.golem.de/rss.php?feed=ATOM1.0 news
+http://www.heise.de/newsticker/heise-atom.xml news
+http://www.phoronix.com/rss.php news
+
+# Linux
+https://www.archlinux.org/feeds/news/ arch linux
+
+#
+# C++
+#
+http://isocpp.org/blog/rss c++
+
+# Work
+https://feeds.feedburner.com/ZukunftMobilitaet work

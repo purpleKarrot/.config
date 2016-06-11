@@ -1,0 +1,206 @@
+# Use windows key
+set $mod Mod4
+set $alt Mod1
+
+# Font for window titles and status bar
+font pango:Fantasque Sans Mono, FontAwesome 11
+
+workspace_layout default
+
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+assign [class="Empathy"] 10
+assign [class="Pidgin"] 10
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# start a terminal
+bindsym $mod+Return exec termite -e fish
+
+# Rofi
+bindsym Mod1+Tab        exec rofi -show window
+bindsym Mod1+space      exec rofi -show run
+bindsym Control+Shift+s exec rofi -show ssh
+
+# start a browser
+bindsym $mod+Shift+Return exec chromium https://www.google.com/_/chrome/newtab?espv=2&ie=UTF-8
+#bindsym $mod+Shift+Return exec uzbl-browser
+
+# music
+bindsym $mod+m exec clerk
+
+# network
+bindsym $mod+n exec nmcli_dmenu
+
+# take a screenshot
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+\ split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+# focus urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym h resize shrink width 10 px or 5 ppt
+    bindsym j resize grow height 10 px or 5 ppt
+    bindsym k resize shrink height 10 px or 5 ppt
+    bindsym l resize grow width 10 px or 5 ppt
+
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 272822, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot
+    bindsym Shift+s exec --no-startup-id systemctl poweroff
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+BackSpace mode "$mode_system"
+
+# Multimedia keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+bindsym XF86AudioMute        exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioMicMute     exec --no-startup-id amixer -q set Capture toggle
+
+#bindsym XF86AudioPlay exec clementine --play-pause
+#bindsym XF86AudioStop exec clementine --stop
+#bindsym XF86AudioPrev exec clementine --previous
+#bindsym XF86AudioNext exec clementine --next
+
+#bindsym XF86KbdBrightnessDown exec "sudo /opt/kbdlight/bin/kbdlight -"
+#bindsym XF86KbdBrightnessUp   exec "sudo /opt/kbdlight/bin/kbdlight +"
+#bindsym XF86TouchpadToggle    exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
+
+#bindsym XF86Display exec arandr
+
+#bindsym $mod+a exec termite -e alsamixer
+#bindsym $mod+Shift+a exec pavucontrol
+
+# Base16 Monokai
+set $base00 #282828
+set $base01 #323232
+set $base02 #49483e
+set $base03 #75715e
+set $base04 #a59f85
+set $base05 #c8c8c8
+set $base06 #e0e0e0
+set $base07 #f8f8f0
+set $base08 #f92672
+set $base09 #fd971f
+set $base0A #e6db74
+set $base0B #a6e22e
+set $base0C #66c03a
+set $base0D #66d9ef
+set $base0E #ae81ff
+set $base0F #cc6633
+
+# set some nice colors      border     background  text      indicator
+client.focused              $base09    $base09     $base01   $base0D
+client.focused_inactive     $base01    $base01     $base09   $base02
+client.unfocused            $base01    $base01     $base04   $base02
+client.urgent               $base08    $base08     $base01   $base08
+
+bar {
+    status_command i3blocks -c ~/.config/i3/blocks.cfg
+    colors {
+        background          $base01
+        statusline          $base04
+        separator           $base01
+        focused_workspace   $base09    $base09    $base01
+        active_workspace    $base01    $base01    $base09
+        inactive_workspace  $base01    $base01    $base04
+        urgent_workspace    $base08    $base08    $base01
+    }
+}

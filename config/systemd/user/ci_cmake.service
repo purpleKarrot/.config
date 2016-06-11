@@ -1,0 +1,9 @@
+[Unit]
+Description=CMake CI Build
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Service]
+ExecStart=/home/daniel/.local/bin/ctest -V -S "${XDG_CONFIG_HOME}/cmake/ci_cmake.cmake"
+SuccessExitStatus=0 255
+Type=oneshot
