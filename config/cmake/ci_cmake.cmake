@@ -27,6 +27,7 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
 [
   { include: [ "<assert.h>", public, "<cassert>", public ] },
   { include: [ "<ctype.h>", public, "<cctype>", public ] },
+  { include: [ "<float.h>", public, "<cfloat>", public ] },
   { include: [ "<math.h>", public, "<cmath>", public ] },
   { include: [ "<signal.h>", public, "<csignal>", public ] },
   { include: [ "<stddef.h>", public, "<cstddef>", public ] },
@@ -35,6 +36,11 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<stdlib.h>", public, "<cstdlib>", public ] },
   { include: [ "<string.h>", public, "<cstring>", public ] },
   { include: [ "<time.h>", public, "<ctime>", public ] },
+
+  # HACK: iwyu suggests those two files each time vector[] is used.
+  # https://github.com/include-what-you-use/include-what-you-use/issues/166
+  { include: [ "<ext/alloc_traits.h>", private, "<vector>", public ] },
+  { include: [ "<memory>", public, "<vector>", public ] },
 
   { include: [ "@\"KWIML/include/kwiml/(abi|int)\\.h\"", private, "<cm_kwiml.h>", public ] },
   { include: [ "@<archive(_entry)?\\.h>", private, "<cm_libarchive.h>", public ] },
@@ -45,6 +51,9 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<json/value.h>", private, "<cm_jsoncpp_value.h>", public ] },
   { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
   { include: [ "<json/reader.h>", private, "<cm_jsoncpp_reader.h>", public ] },
+
+  { include: [ "\"cmsys/Configure.hxx\"", private, "\"cmConfigure.h\"", public ] },
+  { include: [ "\"cmsys/SystemTools.hxx\"", private, "\"cmSystemTools.h\"", public ] },
 ]
 ]=])
 
@@ -73,7 +82,7 @@ set(CTEST_CONFIGURE_COMMAND
   "${CMAKE_COMMAND} \"-G${CTEST_CMAKE_GENERATOR}\" \"${CTEST_SOURCE_DIRECTORY}\""
   )
 
-ctest_start("Experimental")
+ctest_start("Continuous")
 
 ctest_update(RETURN_VALUE files_updated)
 message(STATUS "CMake: ${files_updated} files updated.")
