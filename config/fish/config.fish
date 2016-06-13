@@ -1,3 +1,6 @@
+# no welcome message
+set fish_greeting
+
 # highlighting colors
 set fish_color_autosuggestion 49483e
 set fish_color_normal normal
