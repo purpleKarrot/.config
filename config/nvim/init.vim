@@ -11,15 +11,14 @@ endif
 call plug#begin('$XDG_CACHE_HOME/vim-plug')
 Plug 'rking/ag.vim',                { 'as': 'ag' }
 Plug 'jiangmiao/auto-pairs',        { 'as': 'auto-pairs' }
-Plug 'cstrahan/vim-capnp',          { 'as': 'capnp' }
 Plug 'bbchung/Clamp',               { 'as': 'clamp' }
 Plug 'vhdirk/vim-cmake',            { 'as': 'cmake' }
 Plug 'kien/ctrlp.vim',              { 'as': 'ctrlp' }
 Plug 'dag/vim-fish',                { 'as': 'fish' }
 Plug 'tpope/vim-fugitive',          { 'as': 'fugitive' }
+Plug 'tpope/vim-git',               { 'as': 'git' }
 Plug 'airblade/vim-gitgutter',      { 'as': 'gitgutter' }
 Plug 'gregsexton/gitv',             { 'as': 'gitv' }
-Plug 'fatih/vim-go',                { 'as': 'go' }
 Plug 'digitaltoad/vim-jade',        { 'as': 'jade' }
 Plug 'itchyny/lightline.vim',       { 'as': 'lightline' }
 Plug 'scrooloose/nerdtree',         { 'as': 'nerdtree' }

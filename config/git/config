@@ -125,3 +125,5 @@
 [user]
 	name = Daniel Pfeifer
 	email = daniel@pfeifer-mail.de
+
+# vim: set ft=gitconfig:
