@@ -67,12 +67,17 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<istream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
-  { include: [ "<cmsys/FStream.hxx>", public, "\"cmGeneratedFileStream.h\"", public ] },
 
-  { include: [ "\"cmsys/Configure.hxx\"", private, "\"cmConfigure.h\"", public ] },
-  { include: [ "\"cmsys/DynamicLoader.hxx\"", private, "\"cmDynamicLoader.h\"", public ] },
-  { include: [ "\"cmsys/Process.hxx\"", private, "\"cmProcess.h\"", public ] },
-  { include: [ "\"cmsys/SystemTools.hxx\"", private, "\"cmSystemTools.h\"", public ] },
+  { include: [ "<cmsys/hash_fun.hxx>", private, "<cmsys/hash_map.hxx>", public ] },
+  { include: [ "<cmsys/hash_fun.hxx>", private, "<cmsys/hash_set.hxx>", public ] },
+  { include: [ "<cmsys/hashtable.hxx>", private, "<cmsys/hash_map.hxx>", public ] },
+  { include: [ "<cmsys/hashtable.hxx>", private, "<cmsys/hash_set.hxx>", public ] },
+
+  { include: [ "<cmsys/Configure.hxx>", public, "\"cmConfigure.h\"", public ] },
+  { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
+  { include: [ "<cmsys/FStream.hxx>", public, "\"cmGeneratedFileStream.h\"", public ] },
+  { include: [ "<cmsys/Process.hxx>", public, "\"cmProcess.h\"", public ] },
+  { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
 ]
 ]=])
 
