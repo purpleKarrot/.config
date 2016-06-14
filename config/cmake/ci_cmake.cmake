@@ -67,8 +67,11 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<istream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
+  { include: [ "<cmsys/FStream.hxx>", public, "\"cmGeneratedFileStream.h\"", public ] },
 
   { include: [ "\"cmsys/Configure.hxx\"", private, "\"cmConfigure.h\"", public ] },
+  { include: [ "\"cmsys/DynamicLoader.hxx\"", private, "\"cmDynamicLoader.h\"", public ] },
+  { include: [ "\"cmsys/Process.hxx\"", private, "\"cmProcess.h\"", public ] },
   { include: [ "\"cmsys/SystemTools.hxx\"", private, "\"cmSystemTools.h\"", public ] },
 ]
 ]=])
