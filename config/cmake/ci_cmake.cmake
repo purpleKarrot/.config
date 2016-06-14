@@ -52,6 +52,9 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
   { include: [ "<json/reader.h>", private, "<cm_jsoncpp_reader.h>", public ] },
 
+  { symbol: [ "@std::(i|o)?stringstream", private, "<sstream>", public ] },
+  { symbol: [ "@(cmsys|std)::(i|o)fstream", private, "<cmsys/FStream.hxx>", public ] },
+
   { include: [ "\"cmsys/Configure.hxx\"", private, "\"cmConfigure.h\"", public ] },
   { include: [ "\"cmsys/SystemTools.hxx\"", private, "\"cmSystemTools.h\"", public ] },
 ]
