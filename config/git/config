@@ -99,9 +99,6 @@
 [difftool]
 	prompt = false
 
-[help]
-	autocorrect = 1
-
 [init]
 	templatedir = ~/.config/git/template/
 
