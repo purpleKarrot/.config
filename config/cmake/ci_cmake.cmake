@@ -54,6 +54,7 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<zconf.h>", private, "<cm_zlib.h>", public ] },
   { include: [ "<zlib.h>", private, "<cm_zlib.h>", public ] },
   { include: [ "@<curl/.+\\.h>", private, "<cm_curl.h>", public ] },
+  { include: [ "@<xmlrpc-c/.+\\.h>", private, "<cm_xmlrpc.h>", public ] },
   { include: [ "\"KWIML/include/kwiml/abi.h\"", private, "<cm_kwiml.h>", public ] },
   { include: [ "\"KWIML/include/kwiml/int.h\"", private, "<cm_kwiml.h>", public ] },
 
@@ -68,16 +69,30 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
 
-  { include: [ "<cmsys/hash_fun.hxx>", private, "<cmsys/hash_map.hxx>", public ] },
-  { include: [ "<cmsys/hash_fun.hxx>", private, "<cmsys/hash_set.hxx>", public ] },
-  { include: [ "<cmsys/hashtable.hxx>", private, "<cmsys/hash_map.hxx>", public ] },
-  { include: [ "<cmsys/hashtable.hxx>", private, "<cmsys/hash_set.hxx>", public ] },
+  { include: [ "\"cmsys/hash_fun.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
+  { include: [ "\"cmsys/hash_fun.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
+  { include: [ "\"cmsys/hash_map.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
+  { include: [ "\"cmsys/hash_set.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
+  { include: [ "\"cmsys/hashtable.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
+  { include: [ "\"cmsys/hashtable.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
+
+  { include: [ "\"cmsys/auto_ptr.hxx\"", private, "<cmsys/auto_ptr.hxx>", public ] },
+  { include: [ "\"cmsys/Configure.hxx\"", private, "<cmsys/Configure.hxx>", public ] },
+  { include: [ "\"cmsys/DynamicLoader.hxx\"", private, "<cmsys/DynamicLoader.hxx>", public ] },
+  { include: [ "\"cmsys/Encoding.hxx\"", private, "<cmsys/Encoding.hxx>", public ] },
+  { include: [ "\"cmsys/FStream.hxx\"", private, "<cmsys/FStream.hxx>", public ] },
+  { include: [ "\"cmsys/Process.h\"", private, "<cmsys/Process.h>", public ] },
+  { include: [ "\"cmsys/RegularExpression.hxx\"", private, "<cmsys/RegularExpression.hxx>", public ] },
+  { include: [ "\"cmsys/String.hxx\"", private, "<cmsys/String.hxx>", public ] },
+  { include: [ "\"cmsys/SystemTools.hxx\"", private, "<cmsys/SystemTools.hxx>", public ] },
 
   { include: [ "<cmsys/Configure.hxx>", public, "\"cmConfigure.h\"", public ] },
   { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
   { include: [ "<cmsys/FStream.hxx>", public, "\"cmGeneratedFileStream.h\"", public ] },
-  { include: [ "<cmsys/Process.hxx>", public, "\"cmProcess.h\"", public ] },
   { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
+
+  { include: [ "<curses.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
+  { include: [ "<form.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
 ]
 ]=])
 
@@ -85,7 +100,7 @@ ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
 CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_CXX_CLANG_TIDY:STRING=clang-tidy
-CMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING=include-what-you-use;-Xiwyu;--mapping_file=$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp;-Xiwyu;--no_comments
+CMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING=include-what-you-use;-Xiwyu;--mapping_file=$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp
 CMAKE_CXX_STANDARD:STRING=98
 CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
