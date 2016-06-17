@@ -62,6 +62,7 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/iwyu.imp" [=[
   { symbol: [ "std::istringstream", private, "<sstream>", public ] },
   { symbol: [ "std::ostringstream", private, "<sstream>", public ] },
 
+  { symbol: [ "mode_t", private, "<cmsys/SystemTools.hxx>", public ] },
   { symbol: [ "std::ifstream", private, "<cmsys/FStream.hxx>", public ] },
   { symbol: [ "std::ofstream", private, "<cmsys/FStream.hxx>", public ] },
 
