@@ -29,6 +29,7 @@ Plug 'tpope/vim-sensible',          { 'as': 'sensible' }
 Plug 'mhinz/vim-startify',          { 'as': 'startify' }
 Plug 'tpope/vim-surround',          { 'as': 'surround' }
 Plug 'tomtom/tcomment_vim',         { 'as': 'tcomment' }
+Plug 'cespare/vim-toml',            { 'as': 'toml' }
 Plug 'tpope/vim-unimpaired',        { 'as': 'unimpaired' }
 Plug 'Valloric/YouCompleteMe',      { 'as': 'ycm',
   \ 'do': 'python2 install.py --clang-completer --gocode-completer --system-libclang'
