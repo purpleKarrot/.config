@@ -48,7 +48,7 @@ set(CTEST_CONFIGURE_COMMAND
   "${CMAKE_COMMAND} \"-G${CTEST_CMAKE_GENERATOR}\" \"${CTEST_SOURCE_DIRECTORY}\""
   )
 
-ctest_start("Continuous")
+ctest_start("Experimental")
 
 ctest_update(RETURN_VALUE files_updated)
 message(STATUS "CMake: ${files_updated} files updated.")
