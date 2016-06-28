@@ -26,9 +26,5 @@ export EDITOR=$VISUAL
 # python pip
 export PATH=$HOME/.local/bin:$PATH
 
-# Go
-export GOBIN=$HOME/.local/bin
-export GOPATH=$HOME/go/ext:$HOME/go/local
-
 # use GNOME Keyring
 export $(gnome-keyring-daemon -s)
