@@ -60,6 +60,7 @@
   { include: [ "\"cmsys/FStream.hxx\"", private, "<cmsys/FStream.hxx>", public ] },
   { include: [ "\"cmsys/Process.h\"", private, "<cmsys/Process.h>", public ] },
   { include: [ "\"cmsys/RegularExpression.hxx\"", private, "<cmsys/RegularExpression.hxx>", public ] },
+  { include: [ "\"cmsys/String.h\"", private, "<cmsys/String.h>", public ] },
   { include: [ "\"cmsys/String.hxx\"", private, "<cmsys/String.hxx>", public ] },
   { include: [ "\"cmsys/SystemTools.hxx\"", private, "<cmsys/SystemTools.hxx>", public ] },
 
