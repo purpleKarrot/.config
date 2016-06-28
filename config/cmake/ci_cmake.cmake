@@ -13,9 +13,11 @@ set(CTEST_CMAKE_GENERATOR "Ninja")
 
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake/.clang-tidy" "
 ---
-Checks: '-*,misc-*,performance-*,readability-*,-readability-implicit-bool-cast'
+Checks: '-*,misc-*,performance-*,readability-*,-readability-implicit-bool-cast,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
 HeaderFilterRegex: 'Source/.*(?<!Lexer|Parser)\\.h$'
 CheckOptions:
+  - key:    modernize-use-nullptr.NullMacros
+    value:  'CM_NULLPTR'
   - key:    readability-identifier-naming.MemberCase
     value:  CamelCase
   - key:    readability-identifier-naming.MethodCase
@@ -28,7 +30,6 @@ file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
 CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_CXX_CLANG_TIDY:STRING=clang-tidy
 CMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING=include-what-you-use;-Xiwyu;--mapping_file=${CMAKE_CURRENT_LIST_DIR}/ci_cmake.imp
-CMAKE_CXX_STANDARD:STRING=98
 CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
 CTEST_USE_LAUNCHERS:BOOL=ON
