@@ -15,6 +15,10 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 mkdir -p "$XDG_DATA_HOME"/newsbeuter/
 
+# All my windows applications are 32bit
+export WINEARCH=win32
+export WINEDEBUG=-all
+
 # Editor
 export VISUAL=nvim
 export EDITOR=$VISUAL
