@@ -11,9 +11,7 @@
 # The color will gradually change for a percentage below 85%, and the urgency
 # (exit code 33) is set if there is less that 5% remaining.
 
-set bat_number $BLOCK_INSTANCE 0
-#set acpi (acpi -b | grep "Battery $bat_number[1]")
-set acpi (acpi -b | perl -nle 'print "$1\n$2" if m{Battery 1: (\w+), (\d+)%}')
+set acpi (acpi -b | perl -nle 'print "$1\n$2" if m{Battery 0: (\w+), (\d+)%}')
 
 set percent $acpi[2]
 
