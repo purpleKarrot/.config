@@ -1,0 +1,8 @@
+[Unit]
+Description=mspdbsrv
+
+[Service]
+ExecStart=/usr/bin/sh %h/.config/msvc/mspdbsrv.sh
+
+[Install]
+WantedBy=default.target
