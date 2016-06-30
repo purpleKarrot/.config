@@ -5,4 +5,4 @@ RefuseManualStop=yes
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc bloks
+ExecStart=/usr/bin/mbsync -c "${XDG_CONFIG_HOME}/isync/mbsyncrc" bloks

@@ -1,0 +1,10 @@
+[Unit]
+Description=wineserver
+
+[Service]
+Environment=WINEARCH=win32
+ExecStart=/usr/bin/env "WINEPREFIX=${XDG_DATA_HOME}/wine" /usr/bin/wineserver --foreground --persistent
+ExecStop=/usr/bin/env "WINEPREFIX=${XDG_DATA_HOME}/wine" /usr/bin/wineserver --kill
+
+[Install]
+WantedBy=default.target
