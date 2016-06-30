@@ -1,0 +1,9 @@
+[Unit]
+Description=Hourly clean and update newsbeuter feeds
+
+[Timer]
+OnBootSec=1min
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target

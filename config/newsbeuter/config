@@ -1,31 +1,12 @@
 download-path "/home/gregf/media/videos/podcasts/"
-max-downloads 3
-podcast-auto-enqueue no
 
-browser chromium
-player mplayer
+browser caravel
+player mpv
 
-auto-reload yes
-suppress-first-reload yes
-reload-time 60
-refresh-on-startup no
-confirm-exit no
-reload-threads 4
-show-read-feeds  no
-show-read-articles  no
-notify-xterm yes
-notify-screen yes
-always-display-description true
-
-article-sort-order date-asc
-cleanup-on-quit yes
-display-article-progress yes
-goto-first-unread yes
 goto-next-feed no
 notify-program notify-send
-notify-always no
-notify-format "newsbeuter: finished reload, %f unread feeds (%n unread articles total)"
-delete-read-articles-on-quit no
+notify-always yes
+notify-format "%d new articles (%n unread articles, %f unread feeds)"
 
 #
 # Custom Bindings
