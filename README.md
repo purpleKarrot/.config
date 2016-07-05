@@ -24,7 +24,7 @@ My .dotfiles
 * [khal](http://lostpackets.de/khal/)
 * [khard](https://github.com/scheibler/khard)
 * [msmtp](http://msmtp.sourceforge.net/)
-* [mutt](http://www.mutt.org/)
+* [neomutt](http://www.neomutt.org/)
 * [notmuch](http://notmuchmail.org/)
 * [todoman](https://todoman.rtfd.org/)
 * [vdirsyncer](https://vdirsyncer.rtfd.org/)
@@ -66,6 +66,14 @@ systemctl enable bluetooth
 ```
 pip  install --user khal
 pip2 install --user khard
+```
+
+## Create necessary directories
+
+```
+mkdir -p .cache/mail/bloks/
+mkdir -p .cache/mail/gmail/
+mkdir -p .cache/mail/mailbox/
 ```
 
 ## TODO

@@ -6,7 +6,7 @@ SyncState *
 IMAPStore gmail-remote
 Host imap.gmail.com
 User purpleKarrot@gmail.com
-#Pass password
+PassCmd "secret-tool lookup email purpleKarrot@gmail.com"
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 SSLType IMAPS
 
@@ -39,3 +39,38 @@ Master :bloks-remote:
 Slave :bloks-local:
 Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch to-do
 Sync PullNew Push
+
+
+IMAPStore mailbox-remote
+Host imap.mailbox.org
+User daniel.pfeifer@mailbox.org
+PassCmd "secret-tool lookup email daniel.pfeifer@mailbox.org"
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+SSLType IMAPS
+
+MaildirStore mailbox-local
+Path ~/.cache/mail/mailbox/
+Inbox ~/.cache/mail/mailbox/INBOX
+
+Channel mailbox-default
+Master :mailbox-remote:
+Slave :mailbox-local:
+Patterns *
+
+Channel mailbox-boost
+Master :mailbox-remote:INBOX/Boost
+Slave :mailbox-local:Boost
+
+Channel mailbox-clang
+Master :mailbox-remote:INBOX/Clang
+Slave :mailbox-local:Clang
+
+Channel mailbox-qt
+Master :mailbox-remote:INBOX/Qt
+Slave :mailbox-local:Qt
+
+Group mailbox
+Channel mailbox-default
+Channel mailbox-boost
+Channel mailbox-clang
+Channel mailbox-qt
