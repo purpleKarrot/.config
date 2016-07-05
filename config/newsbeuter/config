@@ -41,8 +41,8 @@ color article             white   default
 color background          white   default
 color listnormal          white   default
 color listnormal_unread   white   default  bold
-color listfocus           white   black
-color listfocus_unread    white   black    bold
+color listfocus           white   color19
+color listfocus_unread    white   color19  bold
 color info                yellow  default  bold
 
 highlight article     "^(Feed|Title|Author|Link|Date):"  red    default  bold
