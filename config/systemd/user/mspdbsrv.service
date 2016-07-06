@@ -1,8 +1,12 @@
 [Unit]
 Description=mspdbsrv
+Requires=wineserver.service
 
 [Service]
-ExecStart=/usr/bin/sh %h/.config/msvc/mspdbsrv.sh
+Environment=WINEARCH=win32
+Environment=WINEDEBUG=-all
+Environment=WINEPREFIX=%h/.local/share/wine
+ExecStart=/usr/bin/wine mspdbsrv.exe -start -shutdowntime -1
 
 [Install]
 WantedBy=default.target
