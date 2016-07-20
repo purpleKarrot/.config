@@ -57,6 +57,8 @@ set cursorline     " highlight the current line
 set number         " show absolute line number of the current line
 set noshowmode     " mode is visible in airline
 set nowrap
+set cpo+=J                         " sentences are followed by 2 spaces.
+cmap w!! w !sudo tee % >/dev/null  " sudo & write, if you forget to sudo first
 
 " middle-click paste
 noremap! <s-insert> <middlemouse>
