@@ -2,7 +2,7 @@
 set fish_greeting
 
 # highlighting colors
-set fish_color_autosuggestion 49483e
+set fish_color_autosuggestion 3c3836
 set fish_color_normal normal
 set fish_color_command green --bold
 set fish_color_quote yellow
@@ -11,8 +11,8 @@ set fish_color_end cyan
 set fish_color_error red
 set fish_color_param blue
 set fish_color_comment brgrey
-set fish_color_match black --background=49483e
-set fish_color_search_match --background=49483e
+set fish_color_match black --background=3c3836
+set fish_color_search_match --background=3c3836
 set fish_color_operator grey
 set fish_color_escape brcyan
 

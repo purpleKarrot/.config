@@ -21,16 +21,16 @@ function fish_prompt
   end
 
   if [ $PWD = ~ ]
-    set_color 323232 -b $status_color
+    set_color 3c3836 -b $status_color
     echo -n -s '   '
   else
-    set_color -o 323232 -b $status_color
+    set_color -o 3c3836 -b $status_color
     echo -n -s ' '(basename $PWD)' '
   end
 
-  set_color -o $status_color -b 323232
+  set_color -o $status_color -b 3c3836
   echo -n -s "$git_branch"
-  set_color -o 323232 -b normal
+  set_color -o 3c3836 -b normal
   echo -n -s ''
   set_color normal
   echo -n -s ' '

@@ -2,53 +2,40 @@
 font = Fantasque Sans Mono 12
 
 [colors]
-cursor = #75715e
-foreground = #ccccc6
-foreground_bold = #f8f8f0
 background = #282828
-highlight = #49483e
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-# black
-color0  = #282828
-color8  = #75715e
+# dark0 + gray
+color0 = #282828
+color8 = #928374
 
-# red
-color1  = #f92672
-color9  = #fb377f
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
 
-# green
-color2  = #90ca1c
-color10 = #a6e22e
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
 
-# yellow
-#color3  = #f4bf75
-color3  = #e6db74
-color11 = #e6db74
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
 
-# blue
-color4  = #56c2d6
-color12 = #66d9ef
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
 
-# magenta
-color5  = #9e6ffe
-color13 = #ae81ff
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
 
-# cyan
-color6  = #a1efe4
-color14 = #8ca7ad
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
 
-#white
-color7  = #ccccc6
-color15 = #f8f8f0
-
-# base16 (TODO: remove?)
-color16 = #fd971f
-color17 = #cc6633
-color18 = #323232
-color19 = #49483e
-color20 = #a59f85
-color21 = #e0e0e0
-
-[hints]
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
 # vim: ft=dosini cms=#%s
