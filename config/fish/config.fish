@@ -23,6 +23,7 @@ set fish_pager_color_progress magenta
 
 # Aliases
 alias pdf=zathura
+alias news=newsbeuter
 # -DCMAKE_CXX_CLANG_TIDY:STRING="clang-tidy;-checks=-*,readability-*;-fix"
 # -DCMAKE_CXX_CLANG_TIDY=clang-tidy
 # -DCMAKE_CXX_COMPILER=clazy

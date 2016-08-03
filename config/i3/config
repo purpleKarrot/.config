@@ -168,39 +168,29 @@ bindsym XF86AudioMicMute     exec --no-startup-id amixer -q set Capture toggle
 #bindsym $mod+a exec termite -e alsamixer
 #bindsym $mod+Shift+a exec pavucontrol
 
-# Base16 Monokai
-set $base00 #282828
-set $base01 #323232
+# Gruvbox Colors
+set $bgcolor #3c3836
+set $fgcolor #a89984
 set $base02 #49483e
-set $base03 #75715e
-set $base04 #a59f85
-set $base05 #c8c8c8
-set $base06 #e0e0e0
-set $base07 #f8f8f0
-set $base08 #f92672
-set $base09 #fd971f
-set $base0A #e6db74
-set $base0B #a6e22e
-set $base0C #66c03a
-set $base0D #66d9ef
-set $base0E #ae81ff
-set $base0F #cc6633
+set $base08 #cc241d
+set $base09 #d79921
+set $base0D #458588
 
 # set some nice colors      border     background  text      indicator
-client.focused              $base09    $base09     $base01   $base0D
-client.focused_inactive     $base01    $base01     $base09   $base02
-client.unfocused            $base01    $base01     $base04   $base02
-client.urgent               $base08    $base08     $base01   $base08
+client.focused              $base09    $base09     $bgcolor   $base0D
+client.focused_inactive     $bgcolor   $bgcolor    $base09    $base02
+client.unfocused            $bgcolor   $bgcolor    $fgcolor   $base02
+client.urgent               $base08    $base08     $bgcolor   $base08
 
 bar {
     status_command i3blocks -c ~/.config/i3/blocks.cfg
     colors {
-        background          $base01
-        statusline          $base04
-        separator           $base01
-        focused_workspace   $base09    $base09    $base01
-        active_workspace    $base01    $base01    $base09
-        inactive_workspace  $base01    $base01    $base04
-        urgent_workspace    $base08    $base08    $base01
+        background          $bgcolor
+        statusline          $fgcolor
+        separator           $bgcolor
+        focused_workspace   $base09    $base09    $bgcolor
+        active_workspace    $bgcolor   $bgcolor   $base09
+        inactive_workspace  $bgcolor   $bgcolor   $fgcolor
+        urgent_workspace    $base08    $base08    $bgcolor
     }
 }

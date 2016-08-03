@@ -11,7 +11,12 @@ http://rss.golem.de/rss.php?feed=ATOM1.0 news
 http://www.heise.de/newsticker/heise-atom.xml news
 http://www.phoronix.com/rss.php news
 http://www.sipgateblog.de/feed/ news
-https://github.com/blog/ship.atom news
+
+#
+# Software
+#
+https://github.com/blog/ship.atom software
+https://blog.kitware.com/tag/software-process/feed/ software
 
 # Linux
 http://blog.elementary.io/rss elementary linux
