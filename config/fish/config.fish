@@ -89,3 +89,5 @@ end
 function cbhs -d "Copy most recent command in history to a clipboard"
   history | head -n 1 | cb
 end
+
+eval (direnv hook fish)

@@ -1,6 +1,9 @@
 # cmake build directory
 /build/
 
+# direnv
+.envrc
+
 # node.js
 /node_modules/
 

@@ -33,6 +33,7 @@ My .dotfiles
 
 * [ag](https://github.com/ggreer/the_silver_searcher)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+* [direnv](http://direnv.net/)
 * [hub](https://hub.github.com/)
 * [imagemagick](http://www.imagemagick.org/)
 * [rmlint](http://rmlint.rtfd.org/)
