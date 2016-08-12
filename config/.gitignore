@@ -1,5 +1,6 @@
 !.gitignore
 Atom/
+Code/
 QtProject.conf
 QtProject/
 Trolltech.conf

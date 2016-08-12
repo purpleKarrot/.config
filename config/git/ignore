@@ -7,7 +7,7 @@
 # node.js
 /node_modules/
 
-# Created by QtCreator
+# QtCreator
 *.pro.user
 CMakeLists.txt.user
 
@@ -21,3 +21,6 @@ CMakeLists.txt.user
 
 # Temporary Files
 *~
+
+# Visual Studio Code
+.vscode/
