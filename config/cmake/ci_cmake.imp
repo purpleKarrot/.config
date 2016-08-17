@@ -85,7 +85,8 @@
 
   { include: [ "\"cm_auto_ptr.hxx\"", public, "<cm_auto_ptr.hxx>", public ] },
   { include: [ "\"cm_sha2_mangle.h\"", public, "\"cm_sha2.h\"", public ] },
-  { include: [ "<cmsys/Configure.hxx>", public, "\"cmConfigure.h\"", public ] },
+  { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
+  { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
   { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
   { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
 
