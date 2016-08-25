@@ -1,36 +1,36 @@
 # zathurarc-dark
 
 set font                        "Fantasque Sans Mono 13"
-set default-bg                  "#272822" #00
-set default-fg                  "#a59f85" #04
+set default-bg                  "#151515" #00
+set default-fg                  "#202020" #01
 
-set statusbar-bg                "#383830" #01
-set statusbar-fg                "#f8f8f2" #05
+set statusbar-fg                "#B0B0B0" #04
+set statusbar-bg                "#202020" #01
 
-set inputbar-bg                 "#272822" #00
-set inputbar-fg                 "#a59f85" #04
+set inputbar-bg                 "#151515" #00 currently not used
+set inputbar-fg                 "#303030" #02
 
-set notification-error-bg       "#f92672" #08
-set notification-error-fg       "#272822" #00
+set notification-error-bg       "#AC4142" #08
+set notification-error-fg       "#151515" #00
 
-set notification-warning-bg     "#f92672" #08
-set notification-warning-fg     "#272822" #00
+set notification-warning-bg     "#AC4142" #08
+set notification-warning-fg     "#151515" #00
 
-set highlight-color             "#f4bf75" #0A
-set highlight-active-color      "#66d9ef" #0D
+set highlight-color             "#F4BF75" #0A
+set highlight-active-color      "#6A9FB5" #0D
 
-set completion-highlight-fg     "#49483e" #02
-set completion-highlight-bg     "#a1efe4" #0C
+set completion-highlight-fg     "#303030" #02
+set completion-highlight-bg     "#75B5AA" #0C
 
-set completion-bg               "#49483e" #02
-set completion-fg               "#a1efe4" #0C
+set completion-bg               "#303030" #02
+set completion-fg               "#75B5AA" #0C
 
-set notification-bg             "#a6e22e" #0B
-set notification-fg             "#272822" #00
+set notification-bg             "#90A959" #0B
+set notification-fg             "#151515" #00
 
-set recolor-lightcolor          "#272822" #00
-set recolor-darkcolor           "#f5f4f1" #06
-set recolor                     "false"
+set recolor-lightcolor          "#151515" #00
+set recolor-darkcolor           "#E0E0E0" #06
+set recolor                     "true"
 
 # setting recolor-keep true will keep any color your pdf has.
 # if it is false, it'll just be black and white
