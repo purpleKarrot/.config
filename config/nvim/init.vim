@@ -19,12 +19,12 @@ Plug 'tpope/vim-fugitive',          { 'as': 'fugitive' }
 Plug 'tpope/vim-git',               { 'as': 'git' }
 Plug 'airblade/vim-gitgutter',      { 'as': 'gitgutter' }
 Plug 'gregsexton/gitv',             { 'as': 'gitv' }
-Plug 'morhetz/gruvbox',             { 'as': 'gruvbox' }
 Plug 'digitaltoad/vim-jade',        { 'as': 'jade' }
 Plug 'itchyny/lightline.vim',       { 'as': 'lightline' }
 Plug 'scrooloose/nerdtree',         { 'as': 'nerdtree' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'as': 'nerdtree-git' }
 Plug 'benekastah/neomake',          { 'as': 'neomake' }
+Plug 'NLKNguyen/papercolor-theme',  { 'as': 'papercolor' }
 Plug 'airblade/vim-rooter',         { 'as': 'rooter' }
 Plug 'tpope/vim-sensible',          { 'as': 'sensible' }
 Plug 'mhinz/vim-startify',          { 'as': 'startify' }
@@ -49,15 +49,12 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_invert_signs=0
-let g:gruvbox_improved_strings=0
-let g:gruvbox_improved_warnings=1
-colorscheme gruvbox
+set termguicolors
+set background=light
+colorscheme PaperColor
 
 " highlight past the 80th column
-execute "set colorcolumn=" . join(range(81, 335), ',')
+"execute "set colorcolumn=" . join(range(81, 335), ',')
 
 set cursorline     " highlight the current line
 set number         " show absolute line number of the current line
@@ -74,7 +71,7 @@ noremap! <s-insert> <middlemouse>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'PaperColor',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ], [ 'fugitive' ], [ 'filename' ] ]
   \ },
