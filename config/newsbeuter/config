@@ -37,12 +37,12 @@ bind-key p prev-unread-feed
 #
 # Colors
 #
-color article             white   default
-color background          white   default
-color listnormal          white   default
-color listnormal_unread   white   default  bold
-color listfocus           white   color19
-color listfocus_unread    white   color19  bold
-color info                yellow  default  bold
+color article             default  default
+color background          default  default
+color listnormal          default  default
+color listnormal_unread   default  default  bold
+color listfocus           default  black
+color listfocus_unread    default  black    bold
+color info                yellow   default  bold
 
 highlight article     "^(Feed|Title|Author|Link|Date):"  red    default  bold
