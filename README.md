@@ -11,6 +11,7 @@ My .dotfiles
 * [imv](http://github.com/eXeC64/imv/)
 * [mc](http://www.ibiblio.org/mc/)
 * [mpv](https://mpv.io/)
+* [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io/)
 * [ranger](http://ranger.nongnu.org)
 * [rofi](https://davedavenport.github.io/rofi/)
