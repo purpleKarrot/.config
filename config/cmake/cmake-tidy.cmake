@@ -20,8 +20,15 @@ CheckOptions:
 ...
 ")
 
+file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Source/QtDialog/.clang-tidy" "
+---
+Checks: '-*llvm-twine-local'
+...
+")
+
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
+BUILD_QtDialog:BOOL=ON
 CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_CXX_CLANG_TIDY:STRING=clang-tidy
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON

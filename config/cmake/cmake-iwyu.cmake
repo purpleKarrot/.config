@@ -13,6 +13,7 @@ set(CTEST_CMAKE_GENERATOR "Ninja")
 
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
+BUILD_QtDialog:BOOL=ON
 CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING=include-what-you-use;-Xiwyu;--mapping_file=${CMAKE_CURRENT_LIST_DIR}/cmake-iwyu.imp
 CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
