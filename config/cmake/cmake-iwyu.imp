@@ -1,4 +1,6 @@
 [
+  { ref: qt5_4.imp },
+
   { include: [ "<assert.h>", public, "<cassert>", public ] },
   { include: [ "<complex.h>", public, "<ccomplex>", public ] },
   { include: [ "<ctype.h>", public, "<cctype>", public ] },

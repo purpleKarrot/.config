@@ -10,9 +10,18 @@ set(CTEST_BUILD_NAME "clang-tidy")
 set(CTEST_CUSTOM_MAXIMUM_NUMBER_OF_WARNINGS 1000)
 set(CTEST_CMAKE_GENERATOR "Ninja")
 
+ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
+file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
+BUILD_QtDialog:BOOL=ON
+CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_CXX_CLANG_TIDY:STRING=clang-tidy
+CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
+CTEST_USE_XMLRPC:BOOL=ON
+")
+
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/.clang-tidy" "
 ---
-Checks: '-*,misc-*,performance-*,readability-*,-readability-implicit-bool-cast,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
+Checks: '-*,misc-*,performance-*,readability-*,-readability-implicit-bool-cast,-readability-inconsistent-declaration-parameter-name,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
 HeaderFilterRegex: 'Source/.*(?<!Lexer|Parser)\\.h$'
 CheckOptions:
   - key:    modernize-use-nullptr.NullMacros
@@ -24,15 +33,6 @@ file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Source/QtDialog/.cla
 ---
 Checks: '-*llvm-twine-local'
 ...
-")
-
-ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
-file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
-BUILD_QtDialog:BOOL=ON
-CMAKE_BUILD_TYPE:STRING=Debug
-CMAKE_CXX_CLANG_TIDY:STRING=clang-tidy
-CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
-CTEST_USE_XMLRPC:BOOL=ON
 ")
 
 find_program(CTEST_GIT_COMMAND NAMES git)
