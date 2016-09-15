@@ -21,8 +21,8 @@ CTEST_USE_XMLRPC:BOOL=ON
 
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/.clang-tidy" "
 ---
-Checks: '-*,misc-*,performance-*,readability-*,-readability-implicit-bool-cast,-readability-inconsistent-declaration-parameter-name,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
-HeaderFilterRegex: 'Source/.*(?<!Lexer|Parser)\\.h$'
+Checks: '-*,misc-*,performance-*,readability-*,-misc-macro-parentheses,-readability-implicit-bool-cast,-readability-inconsistent-declaration-parameter-name,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
+HeaderFilterRegex: 'Source/cm[^/]*\.(h|hxx|cxx)$'
 CheckOptions:
   - key:    modernize-use-nullptr.NullMacros
     value:  'CM_NULLPTR'
