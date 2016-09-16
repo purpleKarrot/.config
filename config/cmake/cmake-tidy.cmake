@@ -19,10 +19,44 @@ CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
 CTEST_USE_XMLRPC:BOOL=ON
 ")
 
+set(clang_tidy_checks
+  misc-argument-comment
+  misc-assert-side-effect
+  misc-bool-pointer-implicit-conversion
+  misc-definitions-in-headers
+  misc-inaccurate-erase
+  misc-inefficient-algorithm
+  misc-macro-repeated-side-effects
+  misc-new-delete-overloads
+  misc-non-copyable-objects
+  misc-sizeof-container
+  misc-string-integer-assignment
+  misc-swapped-arguments
+  misc-throw-by-value-catch-by-reference
+  misc-undelegated-constructor
+  misc-unused-alias-decls
+  misc-unused-parameters
+  misc-unused-raii
+  misc-virtual-near-miss
+  modernize-redundant-void-arg
+  modernize-use-nullptr
+  modernize-use-override
+  performance-unnecessary-copy-initialization
+  readability-braces-around-statements
+  readability-container-size-empty
+  readability-else-after-return
+  #readability-named-parameter
+  readability-redundant-smartptr-get
+  readability-redundant-string-cstr
+  readability-simplify-boolean-expr
+  )
+
+string(REPLACE ";" "," clang_tidy_checks "${clang_tidy_checks}")
+
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/.clang-tidy" "
 ---
-Checks: '-*,misc-*,performance-*,readability-*,-misc-macro-parentheses,-readability-implicit-bool-cast,-readability-inconsistent-declaration-parameter-name,modernize-redundant-void-arg,modernize-use-nullptr,modernize-use-override'
-HeaderFilterRegex: 'Source/cm[^/]*\.(h|hxx|cxx)$'
+Checks: '-*,${clang_tidy_checks}'
+HeaderFilterRegex: 'Source/cm[^/]*\\.(h|hxx|cxx)\$'
 CheckOptions:
   - key:    modernize-use-nullptr.NullMacros
     value:  'CM_NULLPTR'
@@ -30,6 +64,12 @@ CheckOptions:
 ")
 
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Source/QtDialog/.clang-tidy" "
+---
+Checks: '-*llvm-twine-local'
+...
+")
+
+file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Tests/CMakeLib/.clang-tidy" "
 ---
 Checks: '-*llvm-twine-local'
 ...

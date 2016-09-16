@@ -1,6 +1,4 @@
 [
-  { ref: qt5_4.imp },
-
   { include: [ "<assert.h>", public, "<cassert>", public ] },
   { include: [ "<complex.h>", public, "<ccomplex>", public ] },
   { include: [ "<ctype.h>", public, "<cctype>", public ] },
@@ -20,6 +18,9 @@
   { include: [ "<time.h>", public, "<ctime>", public ] },
   { include: [ "<wchar.h>", public, "<cwchar>", public ] },
   { include: [ "<wctype.h>", public, "<cwctype>", public ] },
+
+  { symbol: [ "__GLIBC__", private, "<stdlib.h>", public ] },
+  { symbol: [ "CLOCKS_PER_SEC", private, "<time.h>", public ] },
 
   # HACK: iwyu suggests those two files each time vector[] is used.
   # https://github.com/include-what-you-use/include-what-you-use/issues/166
