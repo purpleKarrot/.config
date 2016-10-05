@@ -21,43 +21,13 @@ set fish_pager_color_completion normal
 set fish_pager_color_description brgrey
 set fish_pager_color_progress magenta
 
-# Aliases
-alias pdf=zathura
-alias news=newsbeuter
-# -DCMAKE_CXX_CLANG_TIDY:STRING="clang-tidy;-checks=-*,readability-*;-fix"
-# -DCMAKE_CXX_CLANG_TIDY=clang-tidy
-# -DCMAKE_CXX_COMPILER=clazy
-# -DCMAKE_C_COMPILER=clang
-# -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=1
-# -DCMAKE_USE_SYSTEM_LIBRARIES:BOOL=1
-alias cmake='cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local'
-alias cninja='cmake -GNinja'
-
-alias cp='cp -iv'
-alias rcp='rsync -v --progress'
-alias rmv='rsync -v --progress --remove-source-files'
-alias mv='mv -iv'
-alias rm='rm -iv'
-alias rmdir='rmdir -v'
-alias ln='ln -v'
-alias chmod='chmod -c'
-alias chown='chown -c'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias ls='ls --color=auto --human-readable --group-directories-first --classify'
-
-alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
-alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
-alias mutt='mutt -F "$XDG_CONFIG_HOME"/mutt/muttrc'
+# alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
+# alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
 
 if command -v colordiff >/dev/null ^/dev/null
   alias diff="colordiff -Nuar"
 else
   alias diff="diff -Nuar"
-end
-
-if command -v yaourt >/dev/null ^/dev/null
-  alias pacman=yaourt
 end
 
 if command -v hub >/dev/null ^/dev/null
