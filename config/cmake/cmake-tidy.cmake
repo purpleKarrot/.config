@@ -65,13 +65,13 @@ CheckOptions:
 
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Source/QtDialog/.clang-tidy" "
 ---
-Checks: '-*llvm-twine-local'
+Checks: '-*,llvm-twine-local'
 ...
 ")
 
 file(WRITE "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary/Tests/CMakeLib/.clang-tidy" "
 ---
-Checks: '-*llvm-twine-local'
+Checks: '-*,llvm-twine-local'
 ...
 ")
 
