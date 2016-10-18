@@ -43,21 +43,6 @@ if command -v thefuck >/dev/null ^/dev/null
   eval (thefuck --alias | tr '\n' ';')
 end
 
-# Functions leveraging the cb() function
-function cbf -d "Copy contents of a file to a clipboard"
-  cat "$argv" | cb
+if command -v direnv >/dev/null ^/dev/null
+  eval (direnv hook fish)
 end
-
-function cbssh -d "Copy (default) SSH public key to a clipboard"
-  cb ~/.ssh/id_rsa.pub
-end
-
-function cbwd -d "Copy current working directory to a clipboard"
-  pwd | cb
-end
-
-function cbhs -d "Copy most recent command in history to a clipboard"
-  history | head -n 1 | cb
-end
-
-eval (direnv hook fish)
