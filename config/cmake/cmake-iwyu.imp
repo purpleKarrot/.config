@@ -66,12 +66,13 @@
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
 
-  { include: [ "\"cmsys/hash_fun.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
-  { include: [ "\"cmsys/hash_fun.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
-  { include: [ "\"cmsys/hash_map.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
-  { include: [ "\"cmsys/hash_set.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
-  { include: [ "\"cmsys/hashtable.hxx\"", private, "<cmsys/hash_map.hxx>", public ] },
-  { include: [ "\"cmsys/hashtable.hxx\"", private, "<cmsys/hash_set.hxx>", public ] },
+  { include: [ "<cm_auto_ptr.hxx>", private, "\"cm_auto_ptr.hxx\"", public ] },
+  { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
+  { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
+  { include: [ "\"cmsys/hash_map.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
+  { include: [ "\"cmsys/hash_set.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
+  { include: [ "\"cmsys/hashtable.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
+  { include: [ "\"cmsys/hashtable.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
 
   { include: [ "\"cmsys/Configure.hxx\"", private, "<cmsys/Configure.hxx>", public ] },
   { include: [ "\"cmsys/DynamicLoader.hxx\"", private, "<cmsys/DynamicLoader.hxx>", public ] },
@@ -93,7 +94,6 @@
   { symbol: [ "cmsys::DynamicLoader::LibraryHandle", private, "<cmsys/DynamicLoader.hxx>", public ] },
   { symbol: [ "cmsys::SystemTools", private, "<cmsys/SystemTools.hxx>", public ] },
 
-  { include: [ "\"cm_auto_ptr.hxx\"", public, "<cm_auto_ptr.hxx>", public ] },
   { include: [ "\"cm_sha2_mangle.h\"", public, "\"cm_sha2.h\"", public ] },
   { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
   { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
