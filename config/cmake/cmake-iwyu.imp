@@ -34,6 +34,7 @@
   { include: [ "<json/reader.h>", private, "<cm_jsoncpp_reader.h>", public ] },
   { include: [ "<json/value.h>", private, "<cm_jsoncpp_value.h>", public ] },
   { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
+  { include: [ "<rhash.h>", private, "<cm_rhash.h>", public ] },
   { include: [ "<uv-errno.h>", private, "<cm_uv.h>", public ] },
   { include: [ "<uv-linux.h>", private, "<cm_uv.h>", public ] },
   { include: [ "<uv-threadpool.h>", private, "<cm_uv.h>", public ] },
@@ -90,11 +91,9 @@
   { symbol: [ "major", private, "\"cmVersion.h\"", public ] },
   { symbol: [ "minor", private, "\"cmVersion.h\"", public ] },
 
-  { symbol: [ "struct cmsysMD5_s", private, "<cmsys/MD5.h>", public ] },
   { symbol: [ "cmsys::DynamicLoader::LibraryHandle", private, "<cmsys/DynamicLoader.hxx>", public ] },
   { symbol: [ "cmsys::SystemTools", private, "<cmsys/SystemTools.hxx>", public ] },
 
-  { include: [ "\"cm_sha2_mangle.h\"", public, "\"cm_sha2.h\"", public ] },
   { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
   { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
   { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
