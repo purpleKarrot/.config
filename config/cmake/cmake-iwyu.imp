@@ -67,7 +67,8 @@
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
 
-  { include: [ "<cm_auto_ptr.hxx>", private, "\"cm_auto_ptr.hxx\"", public ] },
+  { include: [ "<unordered_map>", public, "\"cm_unordered_map.hxx\"", public ] },
+  { include: [ "<unordered_set>", public, "\"cm_unordered_set.hxx\"", public ] },
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
   { include: [ "\"cmsys/hash_map.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
