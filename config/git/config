@@ -1,3 +1,6 @@
+[advice]
+	detachedHead = false
+
 [alias]
 	meld = difftool -d
 
