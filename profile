@@ -17,7 +17,7 @@ mkdir -p "$XDG_DATA_HOME"/newsbeuter/
 
 # All my windows applications are 32bit
 export WINEARCH=win32
-export WINEDEBUG=-all
+export WINEDEBUG=-all,err+all
 
 # Editor
 export VISUAL=nvim
