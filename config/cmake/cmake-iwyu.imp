@@ -19,11 +19,12 @@
   { include: [ "<wchar.h>", public, "<cwchar>", public ] },
   { include: [ "<wctype.h>", public, "<cwctype>", public ] },
 
-  { symbol: [ "std::pair", private, "<utility>", public ] },
-  { symbol: [ "std::pair", private, "<map>", public ] },
-  { symbol: [ "std::pair", private, "<set>", public ] },
+  #{ symbol: [ "std::pair", private, "<utility>", public ] },
+  #{ symbol: [ "std::pair", private, "<map>", public ] },
+  #{ symbol: [ "std::pair", private, "<set>", public ] },
 
   { symbol: [ "__GLIBC__", private, "<stdlib.h>", public ] },
+  { symbol: [ "_Noreturn", private, "<stdlib.h>", public ] },
   { symbol: [ "CLOCKS_PER_SEC", private, "<time.h>", public ] },
 
   # HACK: iwyu suggests those two files each time vector[] is used.
@@ -71,8 +72,18 @@
   { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
   { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
 
+  # TR1
+  { include: [ "<array>", public, "\"cm_array.hxx\"", public ] },
+  { include: [ "<functional>", public, "\"cm_functional.hxx\"", public ] },
+  { include: [ "<memory>", public, "\"cm_memory.hxx\"", public ] },
   { include: [ "<unordered_map>", public, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "<unordered_set>", public, "\"cm_unordered_set.hxx\"", public ] },
+  { include: [ "<tr1/array>", public, "\"cm_array.hxx\"", public ] },
+  { include: [ "<tr1/functional>", public, "\"cm_functional.hxx\"", public ] },
+  { include: [ "<tr1/memory>", public, "\"cm_memory.hxx\"", public ] },
+  { include: [ "<tr1/unordered_map>", public, "\"cm_unordered_map.hxx\"", public ] },
+  { include: [ "<tr1/unordered_set>", public, "\"cm_unordered_set.hxx\"", public ] },
+
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
   { include: [ "\"cmsys/hash_map.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
