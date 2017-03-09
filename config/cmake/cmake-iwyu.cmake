@@ -26,7 +26,7 @@ find_program(CTEST_GIT_COMMAND NAMES git)
 
 if(NOT EXISTS "${CTEST_SOURCE_DIRECTORY}")
   file(MAKE_DIRECTORY "${CTEST_SOURCE_DIRECTORY}")
-  set(CTEST_CHECKOUT_COMMAND "${CTEST_GIT_COMMAND} clone --branch=next git://cmake.org/cmake.git ${CTEST_SOURCE_DIRECTORY}")
+  set(CTEST_CHECKOUT_COMMAND "${CMAKE_CURRENT_LIST_DIR}/cmake-clone.sh ${CTEST_SOURCE_DIRECTORY}")
 endif()
 
 ctest_start("Experimental")
