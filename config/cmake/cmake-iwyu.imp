@@ -85,11 +85,6 @@
   # TODO: adding this was a bad idea. change <> to "" and remove this.
   { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
 
-  # TODO: add 'IWYU pragma: export' to the sources and remove this block.
-  { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
-  { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
-  { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
-
   # Wrappers for 3rd-party libraries used from the system.
   # TODO: change <> to "" both in the source and in the mappings.
   { include: [ "<archive.h>", private, "<cm_libarchive.h>", public ] },
