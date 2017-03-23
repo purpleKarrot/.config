@@ -1,4 +1,5 @@
 [
+  # C++ alternatives to C standard headers
   { include: [ "<assert.h>", public, "<cassert>", public ] },
   { include: [ "<complex.h>", public, "<ccomplex>", public ] },
   { include: [ "<ctype.h>", public, "<cctype>", public ] },
@@ -19,60 +20,33 @@
   { include: [ "<wchar.h>", public, "<cwchar>", public ] },
   { include: [ "<wctype.h>", public, "<cwctype>", public ] },
 
-  #{ symbol: [ "std::pair", private, "<utility>", public ] },
-  #{ symbol: [ "std::pair", private, "<map>", public ] },
-  #{ symbol: [ "std::pair", private, "<set>", public ] },
+  # HACK: check whether this can be removed with next iwyu release.
+  { include: [ "<bits/time.h>", private, "<time.h>", public ] },
+  { include: [ "<bits/types/clock_t.h>", private, "<time.h>", public ] },
+  { include: [ "<bits/types/struct_timespec.h>", private, "<time.h>", public ] },
+  { include: [ "<bits/types/struct_tm.h>", private, "<time.h>", public ] },
+  { include: [ "<bits/types/time_t.h>", private, "<time.h>", public ] },
 
+  # HACK: check whether this can be removed with next iwyu release.
   { symbol: [ "__GLIBC__", private, "<stdlib.h>", public ] },
   { symbol: [ "_Noreturn", private, "<stdlib.h>", public ] },
-  { symbol: [ "CLOCKS_PER_SEC", private, "<time.h>", public ] },
+
+  # HACK: iwyu wrongly thinks that including <iosfwd> is sufficient.
+  { symbol: [ "std::stringstream", private, "<sstream>", public ] },
+  { symbol: [ "std::istringstream", private, "<sstream>", public ] },
+  { symbol: [ "std::ostringstream", private, "<sstream>", public ] },
 
   # HACK: iwyu suggests those two files each time vector[] is used.
   # https://github.com/include-what-you-use/include-what-you-use/issues/166
   { include: [ "<ext/alloc_traits.h>", private, "<vector>", public ] },
   { include: [ "<memory>", public, "<vector>", public ] },
 
-  { include: [ "<archive.h>", private, "<cm_libarchive.h>", public ] },
-  { include: [ "<archive_entry.h>", private, "<cm_libarchive.h>", public ] },
-  { include: [ "<expat.h>", private, "<cm_expat.h>", public ] },
-  { include: [ "<expat_external.h>", private, "<cm_expat.h>", public ] },
-  { include: [ "<json/reader.h>", private, "<cm_jsoncpp_reader.h>", public ] },
-  { include: [ "<json/value.h>", private, "<cm_jsoncpp_value.h>", public ] },
-  { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
-  { include: [ "<rhash.h>", private, "<cm_rhash.h>", public ] },
-  { include: [ "<uv-errno.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<uv-linux.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<uv-threadpool.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<uv-unix.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<uv-version.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<uv.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "<xmlrpc.h>", private, "<cm_xmlrpc.h>", public ] },
-  { include: [ "<xmlrpc_client.h>", private, "<cm_xmlrpc.h>", public ] },
-  { include: [ "<zconf.h>", private, "<cm_zlib.h>", public ] },
-  { include: [ "<zlib.h>", private, "<cm_zlib.h>", public ] },
-  { include: [ "@<curl/.+\\.h>", private, "<cm_curl.h>", public ] },
-  { include: [ "@<xmlrpc-c/.+\\.h>", private, "<cm_xmlrpc.h>", public ] },
+  # TODO: enable this block and remove some <utility> includes?
+  #{ symbol: [ "std::pair", private, "<utility>", public ] },
+  #{ symbol: [ "std::pair", private, "<map>", public ] },
+  #{ symbol: [ "std::pair", private, "<set>", public ] },
 
-  { include: [ "<stdint.h>", public, "<cm_kwiml.h>", public ] },
-  { include: [ "<inttypes.h>", public, "<cm_kwiml.h>", public ] },
-  { include: [ "\"KWIML/include/kwiml/abi.h\"", private, "<cm_kwiml.h>", public ] },
-  { include: [ "\"KWIML/include/kwiml/int.h\"", private, "<cm_kwiml.h>", public ] },
-
-  { symbol: [ "std::stringstream", private, "<sstream>", public ] },
-  { symbol: [ "std::istringstream", private, "<sstream>", public ] },
-  { symbol: [ "std::ostringstream", private, "<sstream>", public ] },
-
-  { symbol: [ "mode_t", private, "<cmsys/SystemTools.hxx>", public ] },
-  { symbol: [ "std::ifstream", private, "<cmsys/FStream.hxx>", public ] },
-  { symbol: [ "std::ofstream", private, "<cmsys/FStream.hxx>", public ] },
-  { symbol: [ "cmsys::ifstream", private, "<cmsys/FStream.hxx>", public ] },
-  { symbol: [ "cmsys::ofstream", private, "<cmsys/FStream.hxx>", public ] },
-
-  { include: [ "<istream>", public, "<cmsys/FStream.hxx>", public ] },
-  { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
-  { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
-
-  # TR1
+  # Wrappers for headers added in TR1 / C++11
   { include: [ "<array>", public, "\"cm_array.hxx\"", public ] },
   { include: [ "<functional>", public, "\"cm_functional.hxx\"", public ] },
   { include: [ "<memory>", public, "\"cm_memory.hxx\"", public ] },
@@ -84,6 +58,11 @@
   { include: [ "<tr1/unordered_map>", public, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "<tr1/unordered_set>", public, "\"cm_unordered_set.hxx\"", public ] },
 
+  # TODO: replace <> with "".
+  { include: [ "<stdint.h>", public, "<cm_kwiml.h>", public ] },
+  { include: [ "<inttypes.h>", public, "<cm_kwiml.h>", public ] },
+
+  # TODO: remove once TR1 / C++11 is required.
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
   { include: [ "\"cmsys/hash_map.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
@@ -91,6 +70,7 @@
   { include: [ "\"cmsys/hashtable.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "\"cmsys/hashtable.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
 
+  # TODO: adding this was a bad idea. change <> to "" for cmsys and remove this block.
   { include: [ "\"cmsys/Configure.hxx\"", private, "<cmsys/Configure.hxx>", public ] },
   { include: [ "\"cmsys/DynamicLoader.hxx\"", private, "<cmsys/DynamicLoader.hxx>", public ] },
   { include: [ "\"cmsys/Encoding.hxx\"", private, "<cmsys/Encoding.hxx>", public ] },
@@ -101,19 +81,59 @@
   { include: [ "\"cmsys/String.hxx\"", private, "<cmsys/String.hxx>", public ] },
   { include: [ "\"cmsys/SystemTools.hxx\"", private, "<cmsys/SystemTools.hxx>", public ] },
 
+  # TODO: adding this was a bad idea. change <> to "" and remove this.
+  { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
+
+  # TODO: add 'IWYU pragma: export' to the sources and remove this block.
+  { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
+  { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
+  { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
+
+  # Wrappers for 3rd-party libraries used from the system.
+  # TODO: change <> to "" both in the source and in the mappings.
+  # TODO: add mapping for kwiml.
+  { include: [ "<archive.h>", private, "<cm_libarchive.h>", public ] },
+  { include: [ "<archive_entry.h>", private, "<cm_libarchive.h>", public ] },
+  { include: [ "@<curl/.+\\.h>", private, "<cm_curl.h>", public ] },
+  { include: [ "<expat.h>", private, "<cm_expat.h>", public ] },
+  { include: [ "<expat_external.h>", private, "<cm_expat.h>", public ] },
+  { include: [ "<json/reader.h>", private, "<cm_jsoncpp_reader.h>", public ] },
+  { include: [ "<json/value.h>", private, "<cm_jsoncpp_value.h>", public ] },
+  { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
+  { include: [ "<rhash.h>", private, "<cm_rhash.h>", public ] },
+  { include: [ "<uv.h>", private, "<cm_uv.h>", public ] },
+  { include: [ "@<uv-.+\\..h>", private, "<cm_uv.h>", public ] },
+  { include: [ "<xmlrpc.h>", private, "<cm_xmlrpc.h>", public ] },
+  { include: [ "<xmlrpc_client.h>", private, "<cm_xmlrpc.h>", public ] },
+  { include: [ "@<xmlrpc-c/.+\\.h>", private, "<cm_xmlrpc.h>", public ] },
+  { include: [ "<zconf.h>", private, "<cm_zlib.h>", public ] },
+  { include: [ "<zlib.h>", private, "<cm_zlib.h>", public ] },
+
+  # Wrappers for bundled 3rd-party libraries.
+  # TODO: change <> to "" both in the source and in the mappings.
+  # TODO: add mappings for libarchive, curl, expat, jsoncpp, rhash, libuv, zlib.
+  { include: [ "\"KWIML/include/kwiml/abi.h\"", private, "<cm_kwiml.h>", public ] },
+  { include: [ "\"KWIML/include/kwiml/int.h\"", private, "<cm_kwiml.h>", public ] },
+
+  # TODO: replace mode_t with int?
+  { symbol: [ "mode_t", private, "<cmsys/SystemTools.hxx>", public ] },
+
+  # TODO: replace <> with "".
+  { symbol: [ "std::ifstream", private, "<cmsys/FStream.hxx>", public ] },
+  { symbol: [ "std::ofstream", private, "<cmsys/FStream.hxx>", public ] },
+  { symbol: [ "cmsys::ifstream", private, "<cmsys/FStream.hxx>", public ] },
+  { symbol: [ "cmsys::ofstream", private, "<cmsys/FStream.hxx>", public ] },
+
+  # TODO: replace <> with "".
+  { include: [ "<istream>", public, "<cmsys/FStream.hxx>", public ] },
+  { include: [ "<ostream>", public, "<cmsys/FStream.hxx>", public ] },
+  { include: [ "<fstream>", public, "<cmsys/FStream.hxx>", public ] },
+
   # major and minor are used as macro arguments. Those are false matches.
   { symbol: [ "major", private, "<cm_kwiml.h>", public ] },
   { symbol: [ "minor", private, "<cm_kwiml.h>", public ] },
   { symbol: [ "major", private, "\"cmVersion.h\"", public ] },
   { symbol: [ "minor", private, "\"cmVersion.h\"", public ] },
-
-  { symbol: [ "cmsys::DynamicLoader::LibraryHandle", private, "<cmsys/DynamicLoader.hxx>", public ] },
-  { symbol: [ "cmsys::SystemTools", private, "<cmsys/SystemTools.hxx>", public ] },
-
-  { include: [ "\"cmConfigure.h\"", private, "<cmConfigure.h>", public ] },
-  { include: [ "<cmsys/Configure.hxx>", public, "<cmConfigure.h>", public ] },
-  { include: [ "<cmsys/DynamicLoader.hxx>", public, "\"cmDynamicLoader.h\"", public ] },
-  { include: [ "<cmsys/SystemTools.hxx>", public, "\"cmSystemTools.h\"", public ] },
 
   { include: [ "<curses.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
   { include: [ "<form.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
