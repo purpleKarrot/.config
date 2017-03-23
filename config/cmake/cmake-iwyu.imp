@@ -24,6 +24,7 @@
   { include: [ "<bits/time.h>", private, "<time.h>", public ] },
   { include: [ "<bits/types/clock_t.h>", private, "<time.h>", public ] },
   { include: [ "<bits/types/struct_timespec.h>", private, "<time.h>", public ] },
+  { include: [ "<bits/types/struct_timeval.h>", private, "<time.h>", public ] },
   { include: [ "<bits/types/struct_tm.h>", private, "<time.h>", public ] },
   { include: [ "<bits/types/time_t.h>", private, "<time.h>", public ] },
 
@@ -91,7 +92,6 @@
 
   # Wrappers for 3rd-party libraries used from the system.
   # TODO: change <> to "" both in the source and in the mappings.
-  # TODO: add mapping for kwiml.
   { include: [ "<archive.h>", private, "<cm_libarchive.h>", public ] },
   { include: [ "<archive_entry.h>", private, "<cm_libarchive.h>", public ] },
   { include: [ "@<curl/.+\\.h>", private, "<cm_curl.h>", public ] },
@@ -102,7 +102,9 @@
   { include: [ "<json/writer.h>", private, "<cm_jsoncpp_writer.h>", public ] },
   { include: [ "<rhash.h>", private, "<cm_rhash.h>", public ] },
   { include: [ "<uv.h>", private, "<cm_uv.h>", public ] },
-  { include: [ "@<uv-.+\\..h>", private, "<cm_uv.h>", public ] },
+  { include: [ "@<uv-.+\\.h>", private, "<cm_uv.h>", public ] },
+  { include: [ "<kwiml/abi.h>", private, "<cm_kwiml.h>", public ] },
+  { include: [ "<kwiml/int.h>", private, "<cm_kwiml.h>", public ] },
   { include: [ "<xmlrpc.h>", private, "<cm_xmlrpc.h>", public ] },
   { include: [ "<xmlrpc_client.h>", private, "<cm_xmlrpc.h>", public ] },
   { include: [ "@<xmlrpc-c/.+\\.h>", private, "<cm_xmlrpc.h>", public ] },
@@ -111,9 +113,22 @@
 
   # Wrappers for bundled 3rd-party libraries.
   # TODO: change <> to "" both in the source and in the mappings.
-  # TODO: add mappings for libarchive, curl, expat, jsoncpp, rhash, libuv, zlib.
+  { include: [ "\"cmlibarchive/libarchive/archive.h\"", private, "<cm_libarchive.h>", public ] },
+  { include: [ "\"cmlibarchive/libarchive/archive_entry.h\"", private, "<cm_libarchive.h>", public ] },
+  { include: [ "@\"cmcurl/include/curl/.+\\.h\"", private, "<cm_curl.h>", public ] },
+  { include: [ "\"cmexpat/lib/expat.h\"", private, "<cm_expat.h>", public ] },
+  { include: [ "\"cmexpat/lib/expat_external.h\"", private, "<cm_expat.h>", public ] },
+  { include: [ "\"cmjsoncpp/include/json/reader.h\"", private, "<cm_jsoncpp_reader.h>", public ] },
+  { include: [ "\"cmjsoncpp/include/json/value.h\"", private, "<cm_jsoncpp_value.h>", public ] },
+  { include: [ "\"cmjsoncpp/include/json/writer.h\"", private, "<cm_jsoncpp_writer.h>", public ] },
+  { include: [ "\"cmlibrhash/librhash/rhash.h\"", private, "<cm_rhash.h>", public ] },
+  { include: [ "\"cmlibuv/include/uv.h\"", private, "<cm_uv.h>", public ] },
+  { include: [ "@\"cmlibuv/include/uv-.+\\.h\"", private, "<cm_uv.h>", public ] },
   { include: [ "\"KWIML/include/kwiml/abi.h\"", private, "<cm_kwiml.h>", public ] },
   { include: [ "\"KWIML/include/kwiml/int.h\"", private, "<cm_kwiml.h>", public ] },
+  { include: [ "\"cmzlib/cm_zlib_mangle.h\"", private, "<cm_zlib.h>", public ] },
+  { include: [ "\"cmzlib/zconf.h\"", private, "<cm_zlib.h>", public ] },
+  { include: [ "\"cmzlib/zlib.h\"", private, "<cm_zlib.h>", public ] },
 
   # TODO: replace mode_t with int?
   { symbol: [ "mode_t", private, "<cmsys/SystemTools.hxx>", public ] },
@@ -136,6 +151,7 @@
   { symbol: [ "minor", private, "\"cmVersion.h\"", public ] },
 
   { include: [ "<curses.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
+  { include: [ "\"form.h\"", private, "\"cmCursesStandardIncludes.h\"", public ] },
   { include: [ "<form.h>", private, "\"cmCursesStandardIncludes.h\"", public ] },
 ]
 
