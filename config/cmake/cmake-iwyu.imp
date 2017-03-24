@@ -63,6 +63,10 @@
   { include: [ "<stdint.h>", public, "<cm_kwiml.h>", public ] },
   { include: [ "<inttypes.h>", public, "<cm_kwiml.h>", public ] },
 
+  # Self-sufficient wrapper for <sys/stat.h>
+  { include: [ "<sys/stat.h>", public, "\"cm_sys_stat.h\"", public ] },
+  { symbol: [ "mode_t", private, "\"cm_sys_stat.h\"", public ] },
+
   # TODO: remove once TR1 / C++11 is required.
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_map.hxx\"", public ] },
   { include: [ "\"cmsys/hash_fun.hxx\"", private, "\"cm_unordered_set.hxx\"", public ] },
@@ -124,9 +128,6 @@
   { include: [ "\"cmzlib/cm_zlib_mangle.h\"", private, "<cm_zlib.h>", public ] },
   { include: [ "\"cmzlib/zconf.h\"", private, "<cm_zlib.h>", public ] },
   { include: [ "\"cmzlib/zlib.h\"", private, "<cm_zlib.h>", public ] },
-
-  # TODO: replace mode_t with int?
-  { symbol: [ "mode_t", private, "<cmsys/SystemTools.hxx>", public ] },
 
   # TODO: replace <> with "".
   { symbol: [ "std::ifstream", private, "<cmsys/FStream.hxx>", public ] },
