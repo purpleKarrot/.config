@@ -29,7 +29,7 @@ if(NOT EXISTS "${CTEST_SOURCE_DIRECTORY}")
   set(CTEST_CHECKOUT_COMMAND "${CMAKE_CURRENT_LIST_DIR}/cmake-clone.sh ${CTEST_SOURCE_DIRECTORY}")
 endif()
 
-ctest_start("Experimental")
+ctest_start("Continuous")
 
 ctest_update(RETURN_VALUE files_updated)
 message(STATUS "CMake: ${files_updated} files updated.")
