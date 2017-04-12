@@ -15,6 +15,7 @@ ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
 BUILD_QtDialog:BOOL=OFF
 CMAKE_BUILD_TYPE:STRING=Debug
+CMake_RUN_IWYU:BOOL=ON
 CMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING=include-what-you-use;-Xiwyu;--mapping_file=${CMAKE_CURRENT_LIST_DIR}/cmake-iwyu.imp
 CMAKE_CXX_STANDARD:STRING=98
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
@@ -38,8 +39,5 @@ if(files_updated LESS 1)
 endif()
 
 ctest_configure()
-ctest_build(TARGET kwiml_test)
-ctest_build(TARGET cmsysTestsCxx)
-ctest_build(TARGET testConsoleBufChild)
 ctest_build()
 ctest_submit()
