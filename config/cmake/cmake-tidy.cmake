@@ -43,7 +43,7 @@ set(clang_tidy_checks
   misc-sizeof-container
   misc-sizeof-expression
   #misc-static-assert
-  #!misc-string-compare
+  misc-string-compare
   misc-string-constructor
   misc-string-integer-assignment
   misc-string-literal-with-embedded-nul
@@ -85,7 +85,7 @@ set(clang_tidy_checks
   #mpi-buffer-deref
   #mpi-type-mismatch
   performance-faster-string-find
-  #!performance-for-range-copy
+  performance-for-range-copy
   performance-implicit-cast-in-loop
   #performance-inefficient-string-concatenation !! decreases readability !!
   performance-type-promotion-in-math-fn
@@ -94,7 +94,7 @@ set(clang_tidy_checks
   readability-avoid-const-params-in-decls
   readability-braces-around-statements
   readability-container-size-empty
-  #!readability-delete-null-pointer
+  readability-delete-null-pointer
   readability-deleted-default
   readability-else-after-return
   #readability-function-size

@@ -3,5 +3,4 @@ ctest_run_script(
   "${CMAKE_CURRENT_LIST_DIR}/cmake-iwyu.cmake"
   "${CMAKE_CURRENT_LIST_DIR}/cmake-tidy.cmake"
   "${CMAKE_CURRENT_LIST_DIR}/cmake-clazy.cmake"
-  #"${CMAKE_CURRENT_LIST_DIR}/cmake-mingw.cmake"
   )

@@ -1,6 +1,10 @@
 set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-iwyu/source")
 set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-iwyu/binary")
 
+# If iwyu is installed to ~/.local/bin, then the headers for clang's intrinsics
+# must be accessible in ~/.local/lib/clang/<version>/include:
+# ln -s /usr/lib/clang ~/.local/lib/clang
+
 set(ENV{CC} "clang")
 set(ENV{CXX} "clang++")
 
