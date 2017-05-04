@@ -1,19 +1,18 @@
-set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/source")
-set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-tidy/binary")
+set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/experimental/source")
+set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/experimental/binary")
 
 set(ENV{CC} "/usr/bin/clang")
-set(ENV{CXX} "/home/daniel/.local/bin/clazy")
-set(ENV{CLAZY_CHECKS} "level1,no-non-pod-global-static,no-rule-of-two-soft,no-missing-qobject-macro,no-reserve-candidates")
+set(ENV{CXX} "/usr/bin/clang++")
 
 set(CTEST_SITE "purplekarrot.net")
-set(CTEST_BUILD_NAME "clang-tidy")
+set(CTEST_BUILD_NAME "experimental-checks")
 set(CTEST_CMAKE_GENERATOR "Ninja")
+set(CTEST_USE_LAUNCHERS ON)
 
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
-BUILD_QtDialog:BOOL=ON
 CMAKE_BUILD_TYPE:STRING=Debug
-CMake_RUN_CLANG_TIDY:BOOL=ON
+CMake_RUN_IWYU:BOOL=ON
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
 CTEST_USE_XMLRPC:BOOL=ON
 ")
@@ -26,7 +25,7 @@ if(NOT EXISTS "${CTEST_SOURCE_DIRECTORY}")
   set(first_build 1)
 endif()
 
-ctest_start("Continuous")
+ctest_start("Experimental")
 
 if(NOT first_build)
   ctest_update(RETURN_VALUE files_updated)
