@@ -2,17 +2,16 @@ set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/experimental/source")
 set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/experimental/binary")
 
 set(ENV{CC} "/usr/bin/clang")
-set(ENV{CXX} "/usr/bin/clang++")
+set(ENV{CXX} "/home/daniel/.local/bin/clazy")
+set(ENV{CLAZY_CHECKS} "function-args-by-ref,function-args-by-value")
 
 set(CTEST_SITE "purplekarrot.net")
 set(CTEST_BUILD_NAME "experimental-checks")
 set(CTEST_CMAKE_GENERATOR "Ninja")
-set(CTEST_USE_LAUNCHERS ON)
 
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
 CMAKE_BUILD_TYPE:STRING=Debug
-CMake_RUN_IWYU:BOOL=ON
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
 CTEST_USE_XMLRPC:BOOL=ON
 ")
