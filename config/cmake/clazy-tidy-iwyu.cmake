@@ -1,25 +1,25 @@
-set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-iwyu/source")
-set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/cmake-iwyu/binary")
+set(CTEST_SOURCE_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/clazy-tidy-iwyu/source")
+set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/clazy-tidy-iwyu/binary")
 
 # If iwyu is installed to ~/.local/bin, then the headers for clang's intrinsics
 # must be accessible in ~/.local/lib/clang/<version>/include:
 # ln -s /usr/lib/clang ~/.local/lib/clang
 
-set(ENV{CC} "clang")
-set(ENV{CXX} "clang++")
+set(ENV{CC} "/usr/bin/clang")
+set(ENV{CXX} "/home/daniel/.local/bin/clazy")
+set(ENV{CLAZY_CHECKS} "level1,no-non-pod-global-static,no-rule-of-two-soft,no-missing-qobject-macro,no-reserve-candidates")
 
 set(CTEST_SITE "purplekarrot.net")
-set(CTEST_BUILD_NAME "include-what-you-use")
-
-set(CTEST_USE_LAUNCHERS ON)
+set(CTEST_BUILD_NAME "clazy-tidy-iwyu")
 set(CTEST_CMAKE_GENERATOR "Ninja")
+set(CTEST_USE_LAUNCHERS ON)
 
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
-BUILD_QtDialog:BOOL=OFF
+BUILD_QtDialog:BOOL=ON
 CMAKE_BUILD_TYPE:STRING=Debug
+CMake_RUN_CLANG_TIDY:BOOL=ON
 CMake_RUN_IWYU:BOOL=ON
-CMAKE_CXX_STANDARD:STRING=98
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
 CTEST_USE_LAUNCHERS:BOOL=${CTEST_USE_LAUNCHERS}
 CTEST_USE_XMLRPC:BOOL=ON
@@ -32,6 +32,11 @@ if(NOT EXISTS "${CTEST_SOURCE_DIRECTORY}")
   set(CTEST_CHECKOUT_COMMAND "${CMAKE_CURRENT_LIST_DIR}/cmake-clone.sh ${CTEST_SOURCE_DIRECTORY}")
   set(first_build 1)
 endif()
+
+set(CTEST_NOTES_FILES
+  "${CMAKE_CURRENT_LIST_FILE}"
+  "${CMAKE_CURRENT_LIST_DIR}/cmake-clone.sh"
+  )
 
 ctest_start("Continuous")
 
