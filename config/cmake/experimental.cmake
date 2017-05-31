@@ -8,11 +8,13 @@ set(ENV{CLAZY_CHECKS} "function-args-by-ref,function-args-by-value")
 set(CTEST_SITE "purplekarrot.net")
 set(CTEST_BUILD_NAME "experimental-checks")
 set(CTEST_CMAKE_GENERATOR "Ninja")
+set(CTEST_USE_LAUNCHERS ON)
 
 ctest_empty_binary_directory(${CTEST_BINARY_DIRECTORY})
 file(WRITE "${CTEST_BINARY_DIRECTORY}/CMakeCache.txt" "
 CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON
+CTEST_USE_LAUNCHERS:BOOL=${CTEST_USE_LAUNCHERS}
 CTEST_USE_XMLRPC:BOOL=ON
 ")
 

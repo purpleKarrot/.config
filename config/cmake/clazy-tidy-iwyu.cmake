@@ -7,7 +7,16 @@ set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/clazy-tidy-iwyu/binary
 
 set(ENV{CC} "/usr/bin/clang")
 set(ENV{CXX} "/home/daniel/.local/bin/clazy")
-set(ENV{CLAZY_CHECKS} "level1,no-non-pod-global-static,no-rule-of-two-soft,no-missing-qobject-macro,no-reserve-candidates")
+set(ENV{CLAZY_CHECKS} "level2\
+,no-copyable-polymorphic\
+,no-function-args-by-ref\
+,no-function-args-by-value\
+,no-missing-qobject-macro\
+,no-non-pod-global-static\
+,no-reserve-candidates\
+,no-rule-of-three\
+,no-rule-of-two-soft\
+")
 
 set(CTEST_SITE "purplekarrot.net")
 set(CTEST_BUILD_NAME "clazy-tidy-iwyu")
