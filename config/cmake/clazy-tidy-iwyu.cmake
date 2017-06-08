@@ -8,14 +8,19 @@ set(CTEST_BINARY_DIRECTORY "$ENV{XDG_CACHE_HOME}/cmake/ci/clazy-tidy-iwyu/binary
 set(ENV{CC} "/usr/bin/clang")
 set(ENV{CXX} "/home/daniel/.local/bin/clazy")
 set(ENV{CLAZY_CHECKS} "level2\
+,no-base-class-event\
+,no-container-inside-loop\
 ,no-copyable-polymorphic\
+,no-ctor-missing-parent-argument\
 ,no-function-args-by-ref\
-,no-function-args-by-value\
 ,no-missing-qobject-macro\
 ,no-non-pod-global-static\
+,no-old-style-connect\
+,no-qstring-allocations\
 ,no-reserve-candidates\
 ,no-rule-of-three\
 ,no-rule-of-two-soft\
+,no-strict-iterators\
 ")
 
 set(CTEST_SITE "purplekarrot.net")
