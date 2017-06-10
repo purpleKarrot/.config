@@ -39,7 +39,6 @@ My .dotfiles
 * [imagemagick](http://www.imagemagick.org/)
 * [rmlint](http://rmlint.rtfd.org/)
 * [secret-tool](https://wiki.gnome.org/Projects/Libsecret)
-* [thefuck](https://github.com/nvbn/thefuck)
 
 ## Fonts
 

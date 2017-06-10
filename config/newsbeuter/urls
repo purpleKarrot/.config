@@ -19,10 +19,13 @@ http://www.sipgateblog.de/feed/ news
 https://github.com/blog/ship.atom software
 https://blog.kitware.com/tag/software-process/feed/ software
 
+#
 # Linux
+#
 http://blog.elementary.io/rss elementary linux
 http://blogs.gnome.org/mclasen/feed/ gnome linux
 https://www.archlinux.org/feeds/news/ arch linux
+https://mailbox.org/feed/ email linux
 
 #
 # C++
@@ -30,6 +33,3 @@ https://www.archlinux.org/feeds/news/ arch linux
 http://blog.qt.io/feed/ qt c++
 http://herbsutter.com/feed/ c++
 http://isocpp.org/blog/rss c++
-
-# Work
-https://feeds.feedburner.com/ZukunftMobilitaet work

@@ -39,10 +39,6 @@ if command -v nvim >/dev/null ^/dev/null
   alias vim=nvim
 end
 
-if command -v thefuck >/dev/null ^/dev/null
-  eval (thefuck --alias | tr '\n' ';')
-end
-
 if command -v direnv >/dev/null ^/dev/null
   eval (direnv hook fish)
 end
