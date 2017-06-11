@@ -1,13 +1,9 @@
 @binding-set Caravel {
+  bind "q" { "quit" () };
   bind "Escape" { "show-about-dialog" () };
   bind "<Control>b" { "execute-process" ("pwd") };
 }
 
-CaravelWindow {
-  gtk-key-bindings: Caravel;
-}
-
-#Caravel GtkScrollbar {
-  -GtkRange-slider-width: 0;
-  -GtkRange-trough-border: 0;
+window {
+  -gtk-key-bindings: Caravel;
 }
