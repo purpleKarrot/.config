@@ -24,7 +24,6 @@ Plug 'itchyny/lightline.vim',       { 'as': 'lightline' }
 Plug 'scrooloose/nerdtree',         { 'as': 'nerdtree' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'as': 'nerdtree-git' }
 Plug 'benekastah/neomake',          { 'as': 'neomake' }
-Plug 'NLKNguyen/papercolor-theme',  { 'as': 'papercolor' }
 Plug 'airblade/vim-rooter',         { 'as': 'rooter' }
 Plug 'tpope/vim-sensible',          { 'as': 'sensible' }
 Plug 'mhinz/vim-startify',          { 'as': 'startify' }
@@ -41,6 +40,9 @@ call plug#end()
 "                                 Vim Options                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Load vim plugins that are installed system wide
+set rtp^=/usr/share/vim/vimfiles/
+
 " show whitespace (unfortunately 'lead:·' is not possible)
 "set list lcs=eol:¬,tab:»\ ,space:·,nbsp:¤
 set list lcs=eol:¬,tab:»\ ,trail:·,nbsp:¤
@@ -49,9 +51,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-set termguicolors
-set background=light
-colorscheme PaperColor
+colorscheme base16
 
 " highlight past the 80th column
 "execute "set colorcolumn=" . join(range(81, 335), ',')
@@ -71,7 +71,7 @@ noremap! <s-insert> <middlemouse>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:lightline = {
-  \ 'colorscheme': 'PaperColor',
+  \ 'colorscheme': 'base16',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ], [ 'fugitive' ], [ 'filename' ] ]
   \ },

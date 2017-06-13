@@ -168,18 +168,18 @@ bindsym XF86AudioMicMute     exec --no-startup-id amixer -q set Capture toggle
 #bindsym $mod+a exec termite -e alsamixer
 #bindsym $mod+Shift+a exec pavucontrol
 
-# Paper Colors
-set $bgcolor #D0D0D0
-set $fgcolor #444444
-set $base02 #969694
-set $base08 #D7005F
-set $base09 #D75F00
+# Tomorrow Colors
+set $bgcolor #e0e0e0
+set $fgcolor #4d4d4c
+set $base04  #4271ae
+set $base08  #c82829
+set $base09  #f5871f
 
 # set some nice colors      border     background  text      indicator
-client.focused              $base09    $base09     $fgcolor   $base02
-client.focused_inactive     $bgcolor   $bgcolor    $fgcolor   $base02
-client.unfocused            $bgcolor   $bgcolor    $fgcolor   $base02
-client.urgent               $base08    $base08     $fgcolor   $base02
+client.focused              $base09    $base09     $fgcolor   $base04
+client.focused_inactive     $bgcolor   $bgcolor    $fgcolor   $base04
+client.unfocused            $bgcolor   $bgcolor    $fgcolor   $base04
+client.urgent               $base08    $base08     $fgcolor   $base04
 
 bar {
     status_command i3blocks -c ~/.config/i3/blocks.cfg

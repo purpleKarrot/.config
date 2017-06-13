@@ -33,16 +33,16 @@
     history = ctrl+grave
 
 [urgency_low]
-    background = #f4bf75
-    foreground = #282828
+    background = #eab700
+    foreground = #4d4d4c
     timeout = 10
 
 [urgency_normal]
-    background = #fd971f
-    foreground = #282828
+    background = #f5871f
+    foreground = #4d4d4c
     timeout = 20
 
 [urgency_critical]
-    background = #f92672
-    foreground = #282828
+    background = #c82829
+    foreground = #4d4d4c
     timeout = 0

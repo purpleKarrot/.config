@@ -73,7 +73,7 @@
 	ui = always
 
 [color "diff"]
-	meta = yellow bold
+	meta = 16 bold
 	commit = green bold
 	frag = magenta bold
 	old = red bold
@@ -87,13 +87,13 @@
 	newHighlight = green bold 22
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
+	current = 16 reverse
+	local = 16
 	remote = green
 
 [color "status"]
 	added = green
-	changed = yellow
+	changed = 16
 	untracked = blue
 
 [diff]
