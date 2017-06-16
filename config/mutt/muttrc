@@ -79,10 +79,6 @@ mailboxes +GMail \
           +gmail/INBOX \
           +gmail/sent \
           +gmail/drafts \
-          +BLOKS. \
-          +bloks/INBOX \
-          +bloks/sent \
-          +bloks/drafts \
           +mailbox.org \
           +mailbox/INBOX \
           +mailbox/Boost \

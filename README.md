@@ -72,7 +72,6 @@ pip2 install --user khard
 ## Create necessary directories
 
 ```
-mkdir -p .cache/mail/bloks/
 mkdir -p .cache/mail/gmail/
 mkdir -p .cache/mail/mailbox/
 ```

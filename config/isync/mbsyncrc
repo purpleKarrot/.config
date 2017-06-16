@@ -22,25 +22,6 @@ Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch to-do
 Sync PullNew Push
 
 
-IMAPStore bloks-remote
-Host secure.emailsrvr.com
-User dp@bloks.de
-PassCmd "secret-tool lookup email dp@bloks.de"
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-SSLType IMAPS
-
-MaildirStore bloks-local
-Path ~/.cache/mail/bloks/
-Trash Trash
-Inbox ~/.cache/mail/bloks/INBOX
-
-Channel bloks
-Master :bloks-remote:
-Slave :bloks-local:
-Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch to-do
-Sync PullNew Push
-
-
 IMAPStore mailbox-remote
 Host imap.mailbox.org
 User daniel.pfeifer@mailbox.org

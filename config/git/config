@@ -102,8 +102,8 @@
 [difftool]
 	prompt = false
 
-[init]
-	templatedir = ~/.config/git/template/
+# [init]
+# 	templatedir = ~/.config/git/template/
 
 [merge]
 	tool = vimdiff
