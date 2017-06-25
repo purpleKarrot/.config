@@ -10,7 +10,9 @@ systemctl --user import-environment XDG_CACHE_HOME
 systemctl --user import-environment XDG_DATA_HOME
 
 # workaround xdg violations
+export CCACHE_DIR="$XDG_CACHE_HOME"/ccache
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
+export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 mkdir -p "$XDG_DATA_HOME"/newsbeuter/

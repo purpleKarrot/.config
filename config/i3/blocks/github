@@ -1,0 +1,11 @@
+#!/usr/bin/fish
+
+set token (sed -n '/oauth_token:/{s/ *oauth_token: \(.*\)/\1/;p}' $XDG_CONFIG_HOME/hub)
+
+set notes (curl -s https://api.github.com/notifications\?access_token\=$token \
+  | grep "unread" \
+  | wc -l)
+
+if [ $notes -gt 0 ]
+  echo 
+end

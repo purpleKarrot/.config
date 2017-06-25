@@ -9,6 +9,10 @@ function cmake
   if contains -- $argv[1] -E --build --find-package
     command cmake $argv
   else
-    command cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local $argv
+    command cmake \
+      -DCMAKE_C_COMPILER_LAUNCHER:FILEPATH=/usr/bin/ccache \
+      -DCMAKE_CXX_COMPILER_LAUNCHER:FILEPATH=/usr/bin/ccache \
+      -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local \
+      $argv
   end
 end

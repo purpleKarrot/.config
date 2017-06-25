@@ -1,5 +1,5 @@
-rofi.font:         Fantasque Sans Mono 12
-rofi.color-normal: #282828,#a59f85,#323232,#49483e,#c8c8c8
-rofi.color-urgent: #282828,#f92672,#323232,#49483e,#f92672
-rofi.color-active: #282828,#fd971f,#323232,#49483e,#fd971f
-rofi.color-window: #282828,#fd971f
+rofi.font:         Fantasque Sans Mono 16
+rofi.color-normal: #f0f0f1,#383a42,#e5e5e6,#a0a1a7,#f0f0f1
+rofi.color-urgent: #f0f0f1,#ca1243,#e5e5e6,#ca1243,#f0f0f1
+rofi.color-active: #f0f0f1,#d75f00,#e5e5e6,#d75f00,#f0f0f1
+rofi.color-window: #f0f0f1,#383a42

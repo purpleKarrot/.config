@@ -16,3 +16,7 @@
 .header-bar {
   box-shadow: none;
 }
+
+VteTerminal, vte-terminal {
+  padding: 0px;
+}

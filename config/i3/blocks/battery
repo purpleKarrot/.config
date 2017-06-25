@@ -1,28 +1,16 @@
 #!/usr/bin/fish
-#
-# Copyright 2015 Daniel Pfeifer <daniel@pfeifer-mail.de>
-#
-# Licensed under the terms of the GNU GPL v3, or any later version.
-#
-# This script is meant to use with i3blocks. It parses the output of the "acpi"
-# command (often provided by a package of the same name) to read the status of
-# the battery, and eventually its remaining time (to full charge or discharge).
-#
-# The color will gradually change for a percentage below 85%, and the urgency
-# (exit code 33) is set if there is less that 5% remaining.
 
 set acpi (acpi -b | perl -nle 'print "$1\n$2" if m{Battery 0: (\w+), (\d+)%}')
-
 set percent $acpi[2]
 
 if [ $percent -lt 10 ]
-  echo "<span foreground=\"#f92672\"></span>"
+  echo "<span foreground=\"#ca1243\"></span>"
 else if [ $percent -lt 20 ]
   echo 
 else if [ $percent -lt 40 ]
   echo 
 else if [ $percent -lt 60 ]
   echo 
-else
+else if [ $percent -lt 80 ]
   echo 
 end

@@ -2,34 +2,34 @@
 font = Fantasque Sans Mono 12
 
 [colors]
-cursor = #4d4d4c
-foreground = #4d4d4c
-background = #ffffff
-highlight = #d6d6d6
+cursor = #526fff
+foreground = #383a42
+background = #fafafa
+highlight = #e5e5e6
 
-color0  = #ffffff
-color1  = #c82829
-color2  = #718c00
-color3  = #eab700
-color4  = #4271ae
-color5  = #8959a8
-color6  = #3e999f
-color7  = #4d4d4c
+color0  = #fafafa
+color1  = #ca1243
+color2  = #50a14f
+color3  = #c18401
+color4  = #4078f2
+color5  = #a626a4
+color6  = #0184bc
+color7  = #383a42
 
-color8  = #8e908c
-color9  = #c82829
-color10 = #718c00
-color11 = #eab700
-color12 = #4271ae
-color13 = #8959a8
-color14 = #3e999f
-color15 = #1d1f21
+color8  = #a0a1a7
+color9  = #ca1243
+color10 = #50a14f
+color11 = #c18401
+color12 = #4078f2
+color13 = #a626a4
+color14 = #0184bc
+color15 = #090a0b
 
-color16 = #f5871f
-color17 = #a3685a
-color18 = #e0e0e0
-color19 = #d6d6d6
-color20 = #969896
-color21 = #282a2e
+color16 = #d75f00
+color17 = #986801
+color18 = #f0f0f1
+color19 = #e5e5e6
+color20 = #696c77
+color21 = #202227
 
 # vim: ft=dosini cms=#%s

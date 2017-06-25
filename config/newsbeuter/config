@@ -5,7 +5,7 @@ player mpv
 
 goto-next-feed no
 notify-program notify-send
-notify-always yes
+notify-always no
 notify-format "%d new articles (%n unread articles, %f unread feeds)"
 
 #
@@ -41,8 +41,8 @@ color article             default  default
 color background          default  default
 color listnormal          default  default
 color listnormal_unread   default  default  bold
-color listfocus           default  yellow
-color listfocus_unread    default  yellow   bold
-color info                yellow   default  bold
+color listfocus           default  color19
+color listfocus_unread    default  color19  bold
+color info                color20  color18   bold
 
 highlight article     "^(Feed|Title|Author|Link|Date):"  red    default  bold

@@ -19,7 +19,6 @@ Channel gmail
 Master :gmail-remote:
 Slave :gmail-local:
 Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch to-do
-Sync PullNew Push
 
 
 IMAPStore mailbox-remote
@@ -41,10 +40,6 @@ Patterns *
 Channel mailbox-boost
 Master :mailbox-remote:INBOX/Boost
 Slave :mailbox-local:Boost
-
-Channel mailbox-clang
-Master :mailbox-remote:INBOX/Clang
-Slave :mailbox-local:Clang
 
 Channel mailbox-qt
 Master :mailbox-remote:INBOX/Qt

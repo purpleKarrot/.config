@@ -168,28 +168,21 @@ bindsym XF86AudioMicMute     exec --no-startup-id amixer -q set Capture toggle
 #bindsym $mod+a exec termite -e alsamixer
 #bindsym $mod+Shift+a exec pavucontrol
 
-# Tomorrow Colors
-set $bgcolor #e0e0e0
-set $fgcolor #4d4d4c
-set $base04  #4271ae
-set $base08  #c82829
-set $base09  #f5871f
-
-# set some nice colors      border     background  text      indicator
-client.focused              $base09    $base09     $fgcolor   $base04
-client.focused_inactive     $bgcolor   $bgcolor    $fgcolor   $base04
-client.unfocused            $bgcolor   $bgcolor    $fgcolor   $base04
-client.urgent               $base08    $base08     $fgcolor   $base04
+# base16 one light colors   border     background  text      indicator
+client.focused              #696c77    #696c77     #e5e5e6    #0184bc
+client.focused_inactive     #a0a1a7    #a0a1a7     #e5e5e6    #0184bc
+client.unfocused            #e5e5e6    #e5e5e6     #696c77    #0184bc
+client.urgent               #ca1243    #ca1243     #e5e5e6    #0184bc
 
 bar {
     status_command i3blocks -c ~/.config/i3/blocks.cfg
     colors {
-        background          $bgcolor
-        statusline          $fgcolor
-        separator           $bgcolor
-        focused_workspace   $base09    $base09    $fgcolor
-        active_workspace    $bgcolor   $bgcolor   $base09
-        inactive_workspace  $bgcolor   $bgcolor   $fgcolor
-        urgent_workspace    $base08    $base08    $fgcolor
+        background          #f0f0f1
+        statusline          #696c77
+        separator           #f0f0f1
+        focused_workspace   #696c77    #696c77     #e5e5e6
+        active_workspace    #a0a1a7    #a0a1a7     #e5e5e6
+        inactive_workspace  #f0f0f1    #f0f0f1     #696c77
+        urgent_workspace    #ca1243    #ca1243     #e5e5e6
     }
 }
