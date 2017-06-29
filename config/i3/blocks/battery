@@ -3,14 +3,20 @@
 set acpi (acpi -b | perl -nle 'print "$1\n$2" if m{Battery 0: (\w+), (\d+)%}')
 set percent $acpi[2]
 
-if [ $percent -lt 10 ]
-  echo "<span foreground=\"#ca1243\"></span>"
-else if [ $percent -lt 20 ]
-  echo 
+if [ $percent -lt 20 ]
+  set label 
 else if [ $percent -lt 40 ]
-  echo 
+  set label 
 else if [ $percent -lt 60 ]
-  echo 
+  set label 
 else if [ $percent -lt 80 ]
-  echo 
+  set label 
+end
+
+if [ $acpi[1] = "Charging" ]
+  echo "<span foreground=\"#50a14f\">$label</span>"
+else if [ $percent -lt 10 ]
+  echo "<span foreground=\"#ca1243\"></span>"
+else
+  echo $label
 end
