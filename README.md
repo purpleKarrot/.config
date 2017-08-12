@@ -65,8 +65,8 @@ systemctl enable bluetooth
 ```
 
 ```
-pip  install --user khal
-pip2 install --user khard
+pip install --user khal
+pip install --user khard
 ```
 
 ## Create necessary directories
