@@ -44,7 +44,7 @@ My .dotfiles
 
 * [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans/)
 * [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
-* [Liberation Fonts](https://fedorahosted.org/liberation-fonts/)
+* [Google Noto Fonts](https://www.google.com/get/noto/)
 
 ## Installation
 
