@@ -60,9 +60,6 @@ done
 ```
 timedatectl set-timezone Europe/Berlin
 timedatectl set-ntp true
-
-systemctl enable bitlbee
-systemctl enable bluetooth
 ```
 
 ```

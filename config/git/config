@@ -102,9 +102,6 @@
 [difftool]
 	prompt = false
 
-# [init]
-# 	templatedir = ~/.config/git/template/
-
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
