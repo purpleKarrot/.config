@@ -1,9 +1,0 @@
-[Unit]
-Description=Pidgin Messenger
-
-[Service]
-ExecStart=/usr/bin/pidgin
-Restart=on-abort
-
-[Install]
-WantedBy=graphical.target

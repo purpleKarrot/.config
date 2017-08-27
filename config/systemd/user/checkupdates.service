@@ -1,6 +1,0 @@
-[Unit]
-Description=Check and notify system updates
-
-[Service]
-ExecStart=/usr/bin/bash ${XDG_CONFIG_HOME}/noti3cation/checkupdates.sh
-Type=oneshot

@@ -32,11 +32,12 @@ My .dotfiles
 
 ## Utilities
 
-* [ag](https://github.com/ggreer/the_silver_searcher)
+* [acpi](https://acpiclient.sourceforge.io/)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * [direnv](http://direnv.net/)
 * [hub](https://hub.github.com/)
 * [imagemagick](http://www.imagemagick.org/)
+* [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rmlint](http://rmlint.rtfd.org/)
 * [secret-tool](https://wiki.gnome.org/Projects/Libsecret)
 
