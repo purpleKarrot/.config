@@ -10,8 +10,8 @@ function cmake
     command cmake $argv
   else
     command cmake \
-      -DCMAKE_C_COMPILER_LAUNCHER:FILEPATH=/usr/bin/ccache \
-      -DCMAKE_CXX_COMPILER_LAUNCHER:FILEPATH=/usr/bin/ccache \
+      -DCMAKE_C_COMPILER_LAUNCHER:FILEPATH=(which ccache) \
+      -DCMAKE_CXX_COMPILER_LAUNCHER:FILEPATH=(which ccache) \
       -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local \
       $argv
   end
