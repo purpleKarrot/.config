@@ -24,3 +24,6 @@ CMakeLists.txt.user
 
 # Visual Studio Code
 .vscode/
+
+# MacOS
+.DS_Store
