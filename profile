@@ -5,9 +5,12 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
 
-systemctl --user import-environment XDG_CONFIG_HOME
-systemctl --user import-environment XDG_CACHE_HOME
-systemctl --user import-environment XDG_DATA_HOME
+if command -v systemctl >/dev/null 2>&1
+then
+  systemctl --user import-environment XDG_CONFIG_HOME
+  systemctl --user import-environment XDG_CACHE_HOME
+  systemctl --user import-environment XDG_DATA_HOME
+fi
 
 # workaround xdg violations
 export CCACHE_DIR="$XDG_CACHE_HOME"/ccache
