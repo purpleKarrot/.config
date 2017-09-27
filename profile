@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=$HOME/.local/bin:$PATH
+
 # XDG Base Directories
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
@@ -25,15 +27,18 @@ export WINEARCH=win32
 export WINEDEBUG=-all,err+all
 
 # Editor
-export VISUAL=nvim
-export EDITOR=$VISUAL
-
-# python pip
-export PATH=$HOME/.local/bin:$PATH
+if command -v nvim >/dev/null 2>&1
+then
+  export VISUAL=nvim
+  export EDITOR=nvim
+fi
 
 # Go
 export GOBIN=$HOME/.local/bin
 export GOPATH=$HOME/go/ext:$HOME/go/local
 
-# use GNOME Keyring
-export $(gnome-keyring-daemon -s)
+# Source local profile (not in git)
+if [ -e ".local_profile" ]
+then
+  source .local_profile
+fi

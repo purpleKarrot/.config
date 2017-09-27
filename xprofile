@@ -12,3 +12,6 @@ then
     "$XDG_CACHE_HOME"/wallpaper.jpg
 fi
 feh --no-fehbg --bg-fill "$XDG_CACHE_HOME"/wallpaper.jpg
+
+# use GNOME Keyring
+export $(gnome-keyring-daemon -s)
