@@ -1,3 +1,3 @@
 function news
-  newsbeuter  $argv
+  newsboat  $argv
 end

@@ -1,9 +1,0 @@
-[Unit]
-Description=Clean and update newsbeuter feeds
-RefuseManualStart=no
-RefuseManualStop=yes
-
-[Service]
-ExecStartPre=/usr/bin/newsbeuter -X
-ExecStart=/usr/bin/newsbeuter -x reload
-Type=oneshot

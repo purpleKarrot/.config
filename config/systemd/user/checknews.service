@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean and update news feeds
+RefuseManualStart=no
+RefuseManualStop=yes
+
+[Service]
+ExecStartPre=/usr/bin/newsboat -X
+ExecStart=/usr/bin/newsboat -x reload
+Type=oneshot
