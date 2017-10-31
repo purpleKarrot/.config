@@ -6,7 +6,7 @@
 # -DCMAKE_USE_SYSTEM_LIBRARIES:BOOL=1
 
 function cmake
-  if contains -- $argv[1] -E --build --find-package
+  if contains -- $argv[1] -E -P --build --find-package
     command cmake $argv
   else
     command cmake \

@@ -2,6 +2,7 @@
 
 # work around display glitches
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export LIBOVERLAY_SCROLLBAR=0
 
 # Set Wallpaper
 if [ ! -f "$XDG_CACHE_HOME"/wallpaper.jpg ]

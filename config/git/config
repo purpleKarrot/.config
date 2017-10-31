@@ -10,7 +10,7 @@
 	staged = diff --staged
 
 	# View the current working tree status using the short format
-	stat = status -s
+	s = status -s
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
