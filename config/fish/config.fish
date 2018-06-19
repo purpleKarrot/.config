@@ -34,11 +34,6 @@ if type hub >/dev/null ^/dev/null
   alias git=hub
 end
 
-if type nvim >/dev/null ^/dev/null
-  alias vi=nvim
-  alias vim=nvim
-end
-
 if type direnv >/dev/null ^/dev/null
   eval (direnv hook fish)
 end

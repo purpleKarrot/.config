@@ -12,6 +12,7 @@ function cmake
     command cmake \
       -DCMAKE_C_COMPILER_LAUNCHER:FILEPATH=(which ccache) \
       -DCMAKE_CXX_COMPILER_LAUNCHER:FILEPATH=(which ccache) \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON \
       -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local \
       $argv
   end

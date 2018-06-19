@@ -3,7 +3,7 @@
 function fish_right_prompt
   set -l status_copy $status
   set -l status_color green
-  set -l status_text "ok"
+  set -l status_text ""
 
   if test "$status_copy" -ne 0
     set status_color red

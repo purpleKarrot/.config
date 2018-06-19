@@ -27,11 +27,8 @@ export WINEARCH=win32
 export WINEDEBUG=-all,err+all
 
 # Editor
-if command -v nvim >/dev/null 2>&1
-then
-  export VISUAL=nvim
-  export EDITOR=nvim
-fi
+export VISUAL=kak
+export EDITOR=kak
 
 # Go
 export GOBIN=$HOME/.local/bin

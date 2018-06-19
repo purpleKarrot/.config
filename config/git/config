@@ -20,10 +20,10 @@
 	meld = difftool -d
 
 [core]
-	editor = nvim
+	editor = kak
 
 [color]
-	ui = always
+	ui = auto
 
 [color "diff"]
 	meta = 16 bold
@@ -56,11 +56,9 @@
 	prompt = false
 
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+	tool = meld
 
 [mergetool]
-	path = nvim
 	prompt = false
 
 [pager]

@@ -1,0 +1,19 @@
+# custom colors
+colorscheme base16
+
+# disable clippy
+set global ui_options ncurses_assistant=none
+
+# language server
+%sh{ kak-lsp --kakoune -s $kak_session }
+lsp-start
+
+hook global WinCreate .* %{
+  add-highlighter window number_lines
+  add-highlighter window show_matching
+  # add-highlighter window show_whitespaces
+  search-highlighting-enable
+  volatile-highlighting-enable
+  auto-pairs-enable
+  snippets-enable
+}
