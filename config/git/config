@@ -69,9 +69,9 @@
 	default = current
 
 [tig "color"]
-	cursor = color12 color11 bold
-	title-blur = default color10
-	title-focus = default color10 bold
+	cursor = default color19 bold
+	title-blur = default color18
+	title-focus = default color18 bold
 
 [user]
 	name = Daniel Pfeifer
