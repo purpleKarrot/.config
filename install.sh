@@ -2,7 +2,7 @@
 
 for file in config profile xprofile
 do
-  rm -f ~/.$file
+  rm -rf ~/.$file
   ln -s ~/Projects/dotfiles/$file ~/.$file
 done
 
@@ -18,6 +18,9 @@ sudo pacman -S --needed --noconfirm \
   feh \
   fish \
   hub \
+  i3blocks \
+  i3lock \
+  i3-wm \
   imagemagick \
   jq \
   kakoune \
