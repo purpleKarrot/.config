@@ -62,11 +62,6 @@ timedatectl set-timezone Europe/Berlin
 timedatectl set-ntp true
 ```
 
-```
-pip install --user khal
-pip install --user khard
-```
-
 ## Create necessary directories
 
 ```

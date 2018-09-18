@@ -25,6 +25,8 @@ sudo pacman -S --needed --noconfirm \
   jq \
   kakoune \
   khal \
+  khard \
+  mpd \
   ncdu \
   neomutt \
   newsboat \
