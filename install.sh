@@ -6,6 +6,12 @@ do
   ln -s ~/Projects/dotfiles/$file ~/.$file
 done
 
+mkdir -p \
+  ~/.cache/mail/gmail \
+  ~/.cache/mail/mailbox \
+  ~/.cache/mpd/playlists \
+  ~/.local/share/newsbeuter
+
 sudo pacman -S --needed --noconfirm \
   base-devel \
   abduco \
@@ -33,7 +39,6 @@ sudo pacman -S --needed --noconfirm \
   ninja \
   noto-fonts \
   openssh \
-  otf-font-awesome \
   rmlint \
   rofi \
   termite \

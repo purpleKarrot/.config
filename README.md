@@ -47,28 +47,6 @@ My .dotfiles
 * [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 * [Google Noto Fonts](https://www.google.com/get/noto/)
 
-## Installation
-
-```
-git clone https://github.com/purpleKarrot/dotfiles.git ~/Projects/dotfiles
-for file in config profile xprofile
-do
-  ln -s ~/Projects/dotfiles/$file ~/.$file
-done
-```
-
-```
-timedatectl set-timezone Europe/Berlin
-timedatectl set-ntp true
-```
-
-## Create necessary directories
-
-```
-mkdir -p .cache/mail/gmail/
-mkdir -p .cache/mail/mailbox/
-```
-
 ## TODO
 
 * bookmark manager

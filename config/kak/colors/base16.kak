@@ -1,6 +1,6 @@
 # base16
 
-%sh{
+evaluate-commands %sh{
   base00='rgb:fafafa' # "00" #fafafa - Default Background
   base01='rgb:f0f0f1' # "18" #f0f0f1 - Lighter Background (Used for status bars)
   base02='rgb:e5e5e6' # "19" #e5e5e6 - Selection Background
@@ -53,7 +53,7 @@
     face global PrimaryCursorEol   default,${base04}
     face global SecondaryCursorEol default,${base02}
     face global LineNumbers        ${base03},${base00}
-    face global LineNumberCursor   ${base03},${base00}
+    face global LineNumberCursor   ${base04},${base00}
     face global LineNumbersWrapped ${base03},${base00}
     face global MenuForeground     ${base02},${base0A}
     face global MenuBackground     ${base04},${base02}
