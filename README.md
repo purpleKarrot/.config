@@ -34,12 +34,14 @@ My .dotfiles
 
 * [acpi](https://acpiclient.sourceforge.io/)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-* [direnv](http://direnv.net/)
+* [direnv](https://direnv.net/)
+* [fd](https://github.com/sharkdp/fd)
 * [hub](https://hub.github.com/)
-* [imagemagick](http://www.imagemagick.org/)
+* [imagemagick](https://www.imagemagick.org/)
+* [pandoc](https://pandoc.org/)
+* [pass](https://www.passwordstore.org/)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
-* [rmlint](http://rmlint.rtfd.org/)
-* [secret-tool](https://wiki.gnome.org/Projects/Libsecret)
+* [rmlint](https://rmlint.rtfd.org/)
 
 ## Fonts
 

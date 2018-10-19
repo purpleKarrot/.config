@@ -21,13 +21,16 @@ sudo pacman -S --needed --noconfirm \
   cmake \
   diff-so-fancy \
   dvtm \
+  fd \
   feh \
   fish \
+  go \
   hub \
   i3blocks \
   i3lock \
   i3-wm \
   imagemagick \
+  isync \
   jq \
   kakoune \
   khal \
@@ -39,6 +42,7 @@ sudo pacman -S --needed --noconfirm \
   ninja \
   noto-fonts \
   openssh \
+  pass \
   rmlint \
   rofi \
   termite \
@@ -47,4 +51,17 @@ sudo pacman -S --needed --noconfirm \
   ttf-font-awesome \
   vdirsyncer \
   xclip \
+  xdg-user-dirs \
   zathura-pdf-mupdf
+
+go get \
+  github.com/nsf/gocode \
+  github.com/zmb3/gogetdoc \
+  golang.org/x/tools/cmd/goimports
+
+yay -S \
+  kak-lsp-git \
+  pandoc-bin \
+  pandoc-citeproc-bin \
+  pandoc-crossref-bin \
+  ttf-fantasque-sans-mono
