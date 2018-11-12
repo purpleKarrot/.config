@@ -33,6 +33,9 @@ export EDITOR=kak
 export GOBIN=$HOME/.local/bin
 export GOPATH=$HOME/go/ext:$HOME/go/local
 
+# Use all cores
+export MAKEFLAGS="-j$(echo $(nproc) + 1 | bc) -l$(nproc)"
+
 # Source local profile (not in git)
 if [ -e ".local_profile" ]
 then

@@ -35,14 +35,17 @@ sudo pacman -S --needed --noconfirm \
   kakoune \
   khal \
   khard \
+  meson \
   mpd \
   ncdu \
   neomutt \
   newsboat \
   ninja \
   noto-fonts \
+  noto-fonts-emoji \
   openssh \
   pass \
+  ripgrep \
   rmlint \
   rofi \
   termite \
