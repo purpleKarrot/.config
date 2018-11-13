@@ -24,6 +24,7 @@ sudo pacman -S --needed --noconfirm \
   fd \
   feh \
   fish \
+  fzf \
   go \
   hub \
   i3blocks \

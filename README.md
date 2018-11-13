@@ -36,6 +36,7 @@ My .dotfiles
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * [direnv](https://direnv.net/)
 * [fd](https://github.com/sharkdp/fd)
+* [fzf](https://github.com/junegunn/fzf)
 * [hub](https://hub.github.com/)
 * [imagemagick](https://www.imagemagick.org/)
 * [pandoc](https://pandoc.org/)

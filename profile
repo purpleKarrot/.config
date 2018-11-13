@@ -36,6 +36,10 @@ export GOPATH=$HOME/go/ext:$HOME/go/local
 # Use all cores
 export MAKEFLAGS="-j$(echo $(nproc) + 1 | bc) -l$(nproc)"
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_OPTS='--color=light --height 40% --layout=reverse --border'
+
 # Source local profile (not in git)
 if [ -e ".local_profile" ]
 then
