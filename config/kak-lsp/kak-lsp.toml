@@ -58,9 +58,8 @@ command = "pyls"
 
 [language.c_cpp]
 extensions = ["c", "h", "cc", "hh", "cpp", "hpp", "cxx", "hxx"]
-roots = ["compile_commands.json", ".cquery"]
-command = "cquery"
-args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
+roots = ["compile_commands.json", ".ccls", ".git"]
+command = "ccls"
 
 [language.haskell]
 extensions = ["hs"]

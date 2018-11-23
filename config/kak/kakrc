@@ -5,8 +5,8 @@ colorscheme base16
 set global ui_options ncurses_assistant=none
 
 # language server
-evaluate-commands %sh{ kak-lsp --kakoune -s $kak_session }
-lsp-start
+eval %sh{ kak-lsp --kakoune -s $kak_session }
+lsp-auto-hover-enable
 
 hook global WinCreate .* %{
   add-highlighter window/ number-lines -hlcursor -separator ' '

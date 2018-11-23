@@ -35,9 +35,9 @@
 
 [color "diff-highlight"]
 	oldNormal = red bold
-	oldHighlight = red bold 52
+	oldHighlight = red bold 224
 	newNormal = green bold
-	newHighlight = green bold 22
+	newHighlight = green bold 157
 
 [color "branch"]
 	current = 16 reverse

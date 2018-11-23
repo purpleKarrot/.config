@@ -82,7 +82,8 @@ go get -v \
   golang.org/x/tools/cmd/goimports
 
 yay -S \
-  kak-lsp-git \
+  ccls \
+  kak-lsp \
   pandoc-bin \
   pandoc-citeproc-bin \
   pandoc-crossref-bin \

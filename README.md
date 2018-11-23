@@ -5,19 +5,30 @@ My .dotfiles
 
 ## Applications
 
-* [cgdb](https://cgdb.github.io/)
 * [fish](https://fishshell.com/)
 * [i3](https://i3wm.org/)
 * [imv](http://github.com/eXeC64/imv/)
-* [kakoune](http://kakoune.org/)
 * [lf](https://godoc.org/github.com/gokcehan/lf)
 * [mpv](https://mpv.io/)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [newsboat](https://newsboat.org/)
 * [rofi](https://davedavenport.github.io/rofi/)
 * [termite](https://github.com/thestinger/termite/)
-* [tig](http://jonas.nitro.dk/tig/)
 * [zathura](https://pwmt.org/projects/zathura/)
+
+## Developer tools
+
+* [ccache](https://ccache.samba.org/)
+* [ccls](https://github.com/MaskRay/ccls)
+* [cgdb](https://cgdb.github.io/)
+* [clang](https://clang.llvm.org/)
+* [cmake](https://cmake.org/)
+* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+* [hub](https://hub.github.com/)
+* [kak-lsp](https://github.com/ul/kak-lsp)
+* [kakoune](http://kakoune.org/)
+* [ninja](https://ninja-build.org/)
+* [tig](http://jonas.nitro.dk/tig/)
 
 ## PIM Suite (soon)
 
@@ -33,11 +44,9 @@ My .dotfiles
 ## Utilities
 
 * [acpi](https://acpiclient.sourceforge.io/)
-* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * [direnv](https://direnv.net/)
 * [fd](https://github.com/sharkdp/fd)
 * [fzf](https://github.com/junegunn/fzf)
-* [hub](https://hub.github.com/)
 * [imagemagick](https://www.imagemagick.org/)
 * [pandoc](https://pandoc.org/)
 * [pass](https://www.passwordstore.org/)
