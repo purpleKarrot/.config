@@ -7,6 +7,14 @@ do
 done
 
 mkdir -p \
+  ~/Desktop \
+  ~/Documents \
+  ~/Downloads \
+  ~/Music \
+  ~/Pictures \
+  ~/Public \
+  ~/Templates \
+  ~/Videos \
   ~/.cache/mail/gmail \
   ~/.cache/mail/mailbox \
   ~/.cache/mpd/playlists \
@@ -15,10 +23,13 @@ mkdir -p \
 sudo pacman -S --needed --noconfirm \
   base-devel \
   abduco \
+  acpi \
+  aria2 \
   ccache \
   cgdb \
   clang \
   cmake \
+  colordiff \
   diff-so-fancy \
   dvtm \
   fd \
@@ -31,6 +42,7 @@ sudo pacman -S --needed --noconfirm \
   i3lock \
   i3-wm \
   imagemagick \
+  imv \
   isync \
   jq \
   kakoune \
@@ -38,6 +50,7 @@ sudo pacman -S --needed --noconfirm \
   khard \
   meson \
   mpd \
+  mpv \
   ncdu \
   neomutt \
   newsboat \
@@ -46,6 +59,8 @@ sudo pacman -S --needed --noconfirm \
   noto-fonts-emoji \
   openssh \
   pass \
+  pavucontrol \
+  pulseaudio \
   ripgrep \
   rmlint \
   rofi \
@@ -56,9 +71,12 @@ sudo pacman -S --needed --noconfirm \
   vdirsyncer \
   xclip \
   xdg-user-dirs \
+  youtube-dl \
   zathura-pdf-mupdf
 
-go get \
+. ~/.profile
+
+go get -v \
   github.com/nsf/gocode \
   github.com/zmb3/gogetdoc \
   golang.org/x/tools/cmd/goimports
