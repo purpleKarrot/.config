@@ -45,6 +45,7 @@ sudo pacman -S --needed --noconfirm \
   imv \
   isync \
   jq \
+  kak-lsp \
   kakoune \
   khal \
   khard \
@@ -83,7 +84,6 @@ go get -v \
 
 yay -S \
   ccls \
-  kak-lsp \
   pandoc-bin \
   pandoc-citeproc-bin \
   pandoc-crossref-bin \
