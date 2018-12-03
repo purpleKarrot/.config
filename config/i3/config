@@ -30,8 +30,7 @@ bindsym Mod1+space      exec rofi -show run
 bindsym Control+Shift+s exec rofi -show ssh
 
 # start a browser
-bindsym $mod+Shift+Return exec chromium https://www.google.com/_/chrome/newtab?espv=2&ie=UTF-8
-#bindsym $mod+Shift+Return exec uzbl-browser
+bindsym $mod+Shift+Return exec xdg-open https://start.duckduckgo.com
 
 # music
 bindsym $mod+m exec clerk
