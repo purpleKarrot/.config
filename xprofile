@@ -5,14 +5,17 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export LIBOVERLAY_SCROLLBAR=0
 
 # Set Wallpaper
-if [ ! -f "$XDG_CACHE_HOME"/wallpaper.jpg ]
+if [ ! -f "$XDG_CACHE_HOME"/wallpaper.png ]
 then
   convert "$XDG_CONFIG_HOME"/wallpaper.svg \
     -resize "$(xrandr|grep '*'|awk '{print $1}')<" \
     -quality 100 \
-    "$XDG_CACHE_HOME"/wallpaper.jpg
+    "$XDG_CACHE_HOME"/wallpaper.png
 fi
-feh --no-fehbg --bg-fill "$XDG_CACHE_HOME"/wallpaper.jpg
+feh --no-fehbg --bg-fill "$XDG_CACHE_HOME"/wallpaper.png
 
 # use GNOME Keyring
 export $(gnome-keyring-daemon -s)
+
+# Lock screen when lid is closed
+xss-lock -- i3lock -i "$XDG_CACHE_HOME"/wallpaper.png &

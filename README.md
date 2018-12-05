@@ -52,6 +52,7 @@ My .dotfiles
 * [pass](https://www.passwordstore.org/)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rmlint](https://rmlint.rtfd.org/)
+* [xss-lock](https://bitbucket.org/raymonad/xss-lock)
 
 ## Fonts
 

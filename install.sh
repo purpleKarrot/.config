@@ -72,6 +72,7 @@ sudo pacman -S --needed --noconfirm \
   vdirsyncer \
   xclip \
   xdg-user-dirs \
+  xss-lock \
   youtube-dl \
   zathura-pdf-mupdf
 
