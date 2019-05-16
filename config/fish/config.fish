@@ -74,6 +74,10 @@ set -x MAKEFLAGS -j(echo (nproc) + 1 | bc) -l(nproc)
 # Node
 set -x NPM_CONFIG_PREFIX ~/.local
 
+if test -e $XDG_DATA_HOME/iterm2/shell_integration.fish
+  source $XDG_DATA_HOME/iterm2/shell_integration.fish
+end
+
 if status is-login
   if type systemctl >/dev/null ^/dev/null
     systemctl --user import-environment XDG_CONFIG_HOME

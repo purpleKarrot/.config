@@ -15,6 +15,7 @@ mkdir -p \
   ~/.cache/mail/gmail \
   ~/.cache/mail/mailbox \
   ~/.cache/mpd/playlists \
+  ~/.local/share/iterm2 \
   ~/.local/share/newsbeuter
 
 command -v brew &>/dev/null && brew install \
@@ -95,3 +96,6 @@ command -v yay &>/dev/null && yay -S \
   pandoc-citeproc-bin \
   pandoc-crossref-bin \
   ttf-fantasque-sans-mono
+
+curl -L https://iterm2.com/shell_integration/fish \
+  -o ~/.local/share/iterm2/shell_integration.fish
