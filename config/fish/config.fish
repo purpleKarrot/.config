@@ -21,6 +21,8 @@ set fish_pager_color_completion normal
 set fish_pager_color_description grey
 set fish_pager_color_progress magenta
 
+set fish_user_paths ~/.local/bin
+
 # alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
 # alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
 
@@ -37,3 +39,23 @@ end
 if type direnv >/dev/null ^/dev/null
   eval (direnv hook fish)
 end
+
+# coreutils
+if type brew >/dev/null ^/dev/null
+  set fish_user_paths $fish_user_paths /usr/local/opt/coreutils/libexec/gnubin
+end
+
+# Editor
+set -x VISUAL kak
+set -x EDITOR kak
+
+# fzf
+set -x FZF_DEFAULT_COMMAND 'fd --type f'
+set -x FZF_DEFAULT_OPTS '--color=light --height 40% --layout=reverse --border'
+
+# Go
+set -x GOBIN ~/.local/bin
+set -x GOPATH ~/go/ext ~/go/local
+
+# Node
+set -x NPM_CONFIG_PREFIX ~/.local

@@ -20,7 +20,20 @@ mkdir -p \
   ~/.cache/mpd/playlists \
   ~/.local/share/newsbeuter
 
-sudo pacman -S --needed --noconfirm \
+command -v brew &>/dev/null && brew install \
+  ccache \
+  cmake \
+  coreutils \
+  diff-so-fancy \
+  fd \
+  fzf \
+  hub \
+  kakoune \
+  ninja \
+  ripgrep \
+  tig
+
+command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   base-devel \
   abduco \
   acpi \
@@ -78,12 +91,12 @@ sudo pacman -S --needed --noconfirm \
 
 . ~/.profile
 
-go get -v \
-  github.com/nsf/gocode \
-  github.com/zmb3/gogetdoc \
-  golang.org/x/tools/cmd/goimports
+# go get -v \
+#   github.com/nsf/gocode \
+#   github.com/zmb3/gogetdoc \
+#   golang.org/x/tools/cmd/goimports
 
-yay -S \
+command -v yay &>/dev/null && yay -S \
   ccls \
   pandoc-bin \
   pandoc-citeproc-bin \
