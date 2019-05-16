@@ -33,6 +33,17 @@ export EDITOR=kak
 export GOBIN=$HOME/.local/bin
 export GOPATH=$HOME/go/ext:$HOME/go/local
 
+# Node
+export NPM_CONFIG_PREFIX=$HOME/.local
+
+# OSX
+if [ $(uname -s) = "Darwin" ]
+then
+  function nproc {
+    sysctl -n hw.ncpu
+  }
+fi
+
 # Use all cores
 export MAKEFLAGS="-j$(echo $(nproc) + 1 | bc) -l$(nproc)"
 

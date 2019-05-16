@@ -37,12 +37,3 @@ end
 if type direnv >/dev/null ^/dev/null
   eval (direnv hook fish)
 end
-
-if [ $COLORTERM = "gnome-terminal" ]
-  printf "\033]4;%d;rgb:%s\033\\" 16 "d7/5f/00" # Base 09
-  printf "\033]4;%d;rgb:%s\033\\" 17 "98/68/01" # Base 0F
-  printf "\033]4;%d;rgb:%s\033\\" 18 "f0/f0/f1" # Base 01
-  printf "\033]4;%d;rgb:%s\033\\" 19 "e5/e5/e6" # Base 02
-  printf "\033]4;%d;rgb:%s\033\\" 20 "69/6c/77" # Base 04
-  printf "\033]4;%d;rgb:%s\033\\" 21 "20/22/27" # Base 06
-end
