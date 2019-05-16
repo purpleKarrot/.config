@@ -1,10 +1,7 @@
 #!/bin/sh
 
-for file in config profile xprofile
-do
-  rm -rf ~/.$file
-  ln -s ~/Projects/dotfiles/$file ~/.$file
-done
+rm -rf ~/.config
+ln -s ~/Projects/dotfiles/config ~/.config
 
 mkdir -p \
   ~/Desktop \
@@ -46,14 +43,11 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   diff-so-fancy \
   dvtm \
   fd \
-  feh \
   fish \
   fzf \
   go \
   hub \
   i3blocks \
-  i3lock \
-  i3-wm \
   imagemagick \
   imv \
   isync \
@@ -78,23 +72,22 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   ripgrep \
   rmlint \
   rofi \
+  sway \
+  swayidle \
+  swaylock \
   termite \
+  texlive-latexextra \
+  texlive-pictures \
   tig \
   tree \
+  ttf-fira-mono \
+  ttf-fira-sans \
   ttf-font-awesome \
   vdirsyncer \
-  xclip \
+  wl-clipboard \
   xdg-user-dirs \
-  xss-lock \
   youtube-dl \
   zathura-pdf-mupdf
-
-. ~/.profile
-
-# go get -v \
-#   github.com/nsf/gocode \
-#   github.com/zmb3/gogetdoc \
-#   golang.org/x/tools/cmd/goimports
 
 command -v yay &>/dev/null && yay -S \
   ccls \

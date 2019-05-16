@@ -57,7 +57,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+\ split h
+#bindsym $mod+\ split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -134,8 +134,8 @@ bindsym $mod+r mode "resize"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -i "$XDG_CACHE_HOME"/wallpaper.png, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit
+    bindsym l exec --no-startup-id swaylock -i "$XDG_CACHE_HOME"/wallpaper.png, mode "default"
+    bindsym e exec --no-startup-id swaymsg exit
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot
@@ -174,7 +174,7 @@ client.unfocused            #e5e5e6  #e5e5e6  #696c77  #0184bc  #e5e5e6
 client.urgent               #ca1243  #ca1243  #e5e5e6  #0184bc  #ca1243
 
 bar {
-    status_command i3blocks -c ~/.config/i3/blocks.cfg
+    status_command i3blocks -c ~/.config/sway/blocks.cfg
     colors {
         background          #f0f0f1
         statusline          #696c77
@@ -185,3 +185,13 @@ bar {
         urgent_workspace    #ca1243  #ca1243  #e5e5e6
     }
 }
+
+output eDP-1 {
+    background ~/.cache/wallpaper.png stretch
+}
+
+exec swayidle -w \
+    timeout 300 'swaylock -f -i ~/.cache/wallpaper.png' \
+    timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+   before-sleep 'swaylock -f -i ~/.cache/wallpaper.png'

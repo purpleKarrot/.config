@@ -21,7 +21,7 @@ function fish_prompt
   end
 
   set_color -o f0f0f1 -b 696c77
-  echo -n -s ' '(string replace -r "(-|\.).*" "" -- (hostname))' '
+  echo -n -s ' '(string replace -r "(-|\.).*" "" -- $hostname)' '
   set_color 696c77 -b $status_color
   echo -n -s ''
 

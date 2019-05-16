@@ -6,13 +6,13 @@ My .dotfiles
 ## Applications
 
 * [fish](https://fishshell.com/)
-* [i3](https://i3wm.org/)
 * [imv](http://github.com/eXeC64/imv/)
 * [lf](https://godoc.org/github.com/gokcehan/lf)
 * [mpv](https://mpv.io/)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [newsboat](https://newsboat.org/)
 * [rofi](https://davedavenport.github.io/rofi/)
+* [sway](https://swaywm.org/)
 * [termite](https://github.com/thestinger/termite/)
 * [zathura](https://pwmt.org/projects/zathura/)
 
@@ -48,16 +48,17 @@ My .dotfiles
 * [fd](https://github.com/sharkdp/fd)
 * [fzf](https://github.com/junegunn/fzf)
 * [imagemagick](https://www.imagemagick.org/)
+* [jq](https://stedolan.github.io/jq/)
 * [pandoc](https://pandoc.org/)
 * [pass](https://www.passwordstore.org/)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rmlint](https://rmlint.rtfd.org/)
-* [xss-lock](https://bitbucket.org/raymonad/xss-lock)
 
 ## Fonts
 
 * [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans/)
-* [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
+* [Fira](http://mozilla.github.io/Fira/)
+* [Font Awesome](https://fontawesome.com/)
 * [Google Noto Fonts](https://www.google.com/get/noto/)
 
 ## TODO

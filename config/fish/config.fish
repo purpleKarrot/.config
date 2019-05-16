@@ -23,6 +23,17 @@ set fish_pager_color_progress magenta
 
 set fish_user_paths ~/.local/bin
 
+# XDG Base Directories
+set -x XDG_CONFIG_HOME ~/.config
+set -x XDG_CACHE_HOME ~/.cache
+set -x XDG_DATA_HOME ~/.local/share
+
+# workaround xdg violations
+set -x CCACHE_DIR $XDG_CACHE_HOME/ccache
+set -x NOTMUCH_CONFIG $XDG_CONFIG_HOME/notmuch/notmuchrc
+set -x NMBGIT $XDG_DATA_HOME/notmuch/nmbug
+set -x WEECHAT_HOME $XDG_CONFIG_HOME/weechat
+
 # alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
 # alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
 
@@ -51,11 +62,26 @@ set -x EDITOR kak
 
 # fzf
 set -x FZF_DEFAULT_COMMAND 'fd --type f'
-set -x FZF_DEFAULT_OPTS '--color=light --height 40% --layout=reverse --border'
+set -x FZF_DEFAULT_OPTS '--color=light'
 
 # Go
 set -x GOBIN ~/.local/bin
-set -x GOPATH ~/go/ext ~/go/local
+set -x GOPATH ~/.cache/go ~/GoProjects
+
+# Make
+set -x MAKEFLAGS -j(echo (nproc) + 1 | bc) -l(nproc)
 
 # Node
 set -x NPM_CONFIG_PREFIX ~/.local
+
+if status is-login
+  if type systemctl >/dev/null ^/dev/null
+    systemctl --user import-environment XDG_CONFIG_HOME
+    systemctl --user import-environment XDG_CACHE_HOME
+    systemctl --user import-environment XDG_DATA_HOME
+  end
+
+  if [ (tty) = '/dev/tty1' ]; and type sway >/dev/null ^/dev/null
+    exec sway
+  end
+end
