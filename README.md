@@ -1,5 +1,5 @@
-My .dotfiles
-============
+My ~/.config/ directory
+=======================
 
 ![Screenshot](https://raw.githubusercontent.com/purpleKarrot/dotfiles/master/screenshot.png)
 

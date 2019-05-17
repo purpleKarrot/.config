@@ -1,8 +1,5 @@
 #!/bin/sh
 
-rm -rf ~/.config
-ln -s ~/Projects/dotfiles/config ~/.config
-
 mkdir -p \
   ~/Desktop \
   ~/Documents \

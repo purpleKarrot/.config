@@ -10,6 +10,8 @@ composer/
 dconf/
 direnv/
 enchant/
+fish/fish_variables
+fish/fishd.*
 git/gitk
 hub
 menus/
