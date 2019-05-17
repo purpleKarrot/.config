@@ -25,10 +25,10 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Return exec termite -e fish
 
 # Application Launcher
-bindsym Mod1+space exec termite --name=launcher -e "bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'"
-bindsym Mod4+Shift+u exec termite --name=launcher -e "yay --color=auto -Syyu"
-bindsym Mod4+Shift+i exec termite --name=launcher -e "fish -c pkginstall"
-for_window [app_id="^launcher$"] floating enable, border pixel
+bindsym Mod1+space exec termite --class=Launcher -e "bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'"
+bindsym Mod4+Shift+u exec termite --class=Launcher -e "yay --color=auto -Syyu"
+bindsym Mod4+Shift+i exec termite --class=Launcher -e "fish -c pkginstall"
+for_window [class="Launcher"] floating enable, border pixel
 
 # start a browser
 bindsym $mod+Shift+Return exec xdg-open https://start.duckduckgo.com

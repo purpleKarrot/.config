@@ -1,0 +1,9 @@
+[Unit]
+Description=SSH key agent
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ssh-agent -a %t/ssh-agent.socket
+
+[Install]
+WantedBy=default.target

@@ -74,6 +74,11 @@ set -x MAKEFLAGS -j(echo (nproc) + 1 | bc) -l(nproc)
 # Node
 set -x NPM_CONFIG_PREFIX ~/.local
 
+# SSH key agent
+if not set -q SSH_AUTH_SOCK
+  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+end
+
 if test -e $XDG_DATA_HOME/iterm2/shell_integration.fish
   source $XDG_DATA_HOME/iterm2/shell_integration.fish
 end

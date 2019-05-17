@@ -53,6 +53,7 @@ My .dotfiles
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rmlint](https://rmlint.rtfd.org/)
 * [mako](https://wayland.emersion.fr/mako/)
+* [secret-tool](https://wiki.gnome.org/Projects/Libsecret)
 
 ## Fonts
 

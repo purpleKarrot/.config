@@ -57,6 +57,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   kakoune \
   khal \
   khard \
+  libsecret \
   mako \
   meson \
   mpd \
@@ -90,7 +91,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   youtube-dl \
   zathura-pdf-mupdf
 
-command -v yay &>/dev/null && yay -S \
+command -v yay &>/dev/null && yay -S --needed --noconfirm \
   ccls \
   pandoc-bin \
   pandoc-citeproc-bin \

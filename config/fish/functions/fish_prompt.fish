@@ -1,5 +1,11 @@
 #!/usr/bin/fish
 
+if type lsb_release >/dev/null ^/dev/null
+  set __fish_prompt_host ' '(hostname)' ('(lsb_release -is)') '
+else
+  set __fish_prompt_host ' '(hostname)' ('(uname -s)') '
+end
+
 function fish_prompt
   set -l status_color blue
   set -l git_branch
@@ -21,7 +27,7 @@ function fish_prompt
   end
 
   set_color -o f0f0f1 -b 696c77
-  echo -n -s ' '(string replace -r "(-|\.).*" "" -- $hostname)' '
+  echo -n -s $__fish_prompt_host
   set_color 696c77 -b $status_color
   echo -n -s ''
 
