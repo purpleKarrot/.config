@@ -57,6 +57,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   kakoune \
   khal \
   khard \
+  mako \
   meson \
   mpd \
   mpv \
@@ -72,7 +73,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   pulseaudio \
   ripgrep \
   rmlint \
-  rofi \
   sway \
   swayidle \
   swaylock \

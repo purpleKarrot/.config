@@ -24,10 +24,11 @@ bindsym $mod+minus scratchpad show
 # start a terminal
 bindsym $mod+Return exec termite -e fish
 
-# Rofi
-bindsym Mod1+Tab        exec rofi -show window
-bindsym Mod1+space      exec rofi -show run
-bindsym Control+Shift+s exec rofi -show ssh
+# Application Launcher
+bindsym Mod1+space exec termite --name=launcher -e "bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'"
+bindsym Mod4+Shift+u exec termite --name=launcher -e "yay --color=auto -Syyu"
+bindsym Mod4+Shift+i exec termite --name=launcher -e "fish -c pkginstall"
+for_window [app_id="^launcher$"] floating enable, border pixel
 
 # start a browser
 bindsym $mod+Shift+Return exec xdg-open https://start.duckduckgo.com
@@ -195,3 +196,5 @@ exec swayidle -w \
     timeout 600 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
    before-sleep 'swaylock -f -i ~/.cache/wallpaper.png'
+
+exec mako

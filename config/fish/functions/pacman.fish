@@ -1,3 +1,3 @@
 function pacman
-  sudo pacman --color auto $argv
+  pacman --color auto $argv
 end

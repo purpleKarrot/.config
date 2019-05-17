@@ -1,5 +1,0 @@
-rofi.font:         Fantasque Sans Mono 16
-rofi.color-normal: #f0f0f1,#383a42,#e5e5e6,#a0a1a7,#f0f0f1
-rofi.color-urgent: #f0f0f1,#ca1243,#e5e5e6,#ca1243,#f0f0f1
-rofi.color-active: #f0f0f1,#d75f00,#e5e5e6,#d75f00,#f0f0f1
-rofi.color-window: #f0f0f1,#383a42

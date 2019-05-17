@@ -11,7 +11,6 @@ My .dotfiles
 * [mpv](https://mpv.io/)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [newsboat](https://newsboat.org/)
-* [rofi](https://davedavenport.github.io/rofi/)
 * [sway](https://swaywm.org/)
 * [termite](https://github.com/thestinger/termite/)
 * [zathura](https://pwmt.org/projects/zathura/)
@@ -53,6 +52,7 @@ My .dotfiles
 * [pass](https://www.passwordstore.org/)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rmlint](https://rmlint.rtfd.org/)
+* [mako](https://wayland.emersion.fr/mako/)
 
 ## Fonts
 
