@@ -68,11 +68,6 @@
 [push]
 	default = current
 
-[tig "color"]
-	cursor = default color19 bold
-	title-blur = default color18
-	title-focus = default color18 bold
-
 [user]
 	name = Daniel Pfeifer
 	email = daniel@pfeifer-mail.de
