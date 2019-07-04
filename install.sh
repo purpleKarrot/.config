@@ -80,7 +80,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   texlive-latexextra \
   texlive-pictures \
   tig \
-  tree \
   ttf-fira-mono \
   ttf-fira-sans \
   ttf-font-awesome \

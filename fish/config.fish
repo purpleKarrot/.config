@@ -43,6 +43,7 @@ end
 
 if type exa >/dev/null ^/dev/null
   alias ls="exa --git --group-directories-first"
+  alias tree="exa --tree"
 end
 
 if type colordiff >/dev/null ^/dev/null
