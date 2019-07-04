@@ -33,6 +33,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   abduco \
   acpi \
   aria2 \
+  bat \
   ccache \
   cgdb \
   clang \

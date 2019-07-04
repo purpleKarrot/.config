@@ -43,6 +43,7 @@ My ~/.config/ directory
 ## Utilities
 
 * [acpi](https://acpiclient.sourceforge.io/)
+* [bat](https://github.com/sharkdp/bat)
 * [direnv](https://direnv.net/)
 * [fd](https://github.com/sharkdp/fd)
 * [fzf](https://github.com/junegunn/fzf)
