@@ -41,6 +41,10 @@ if type bat >/dev/null ^/dev/null
   alias cat=bat
 end
 
+if type exa >/dev/null ^/dev/null
+  alias ls="exa --git --group-directories-first"
+end
+
 if type colordiff >/dev/null ^/dev/null
   alias diff="colordiff -Nuar"
 else

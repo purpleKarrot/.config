@@ -41,6 +41,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   colordiff \
   diff-so-fancy \
   dvtm \
+  exa \
   fd \
   fish \
   fzf \

@@ -45,6 +45,7 @@ My ~/.config/ directory
 * [acpi](https://acpiclient.sourceforge.io/)
 * [bat](https://github.com/sharkdp/bat)
 * [direnv](https://direnv.net/)
+* [exa](https://the.exa.website/)
 * [fd](https://github.com/sharkdp/fd)
 * [fzf](https://github.com/junegunn/fzf)
 * [imagemagick](https://www.imagemagick.org/)
