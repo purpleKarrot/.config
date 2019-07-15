@@ -1,0 +1,3 @@
+[submodule "kak/auto-pairs"]
+	path = kak/auto-pairs
+	url = https://github.com/alexherbo2/auto-pairs.kak.git
