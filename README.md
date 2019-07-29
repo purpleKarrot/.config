@@ -60,7 +60,6 @@ My ~/.config/ directory
 ## Fonts
 
 * [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans/)
-* [Fira](http://mozilla.github.io/Fira/)
 * [Font Awesome](https://fontawesome.com/)
 * [Google Noto Fonts](https://www.google.com/get/noto/)
 

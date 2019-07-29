@@ -77,11 +77,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   swayidle \
   swaylock \
   termite \
-  texlive-latexextra \
-  texlive-pictures \
   tig \
-  ttf-fira-mono \
-  ttf-fira-sans \
   ttf-font-awesome \
   vdirsyncer \
   wl-clipboard \
@@ -91,9 +87,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
 
 command -v yay &>/dev/null && yay -S --needed --noconfirm \
   ccls \
-  pandoc-bin \
-  pandoc-citeproc-bin \
-  pandoc-crossref-bin \
   ttf-fantasque-sans-mono
 
 curl -L https://iterm2.com/shell_integration/fish \
