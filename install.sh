@@ -12,48 +12,51 @@ mkdir -p \
   ~/.cache/mail/gmail \
   ~/.cache/mail/mailbox \
   ~/.cache/mpd/playlists \
-  ~/.local/share/iterm2 \
   ~/.local/share/newsbeuter
 
-command -v brew &>/dev/null && brew install \
-  ccache \
-  cmake \
-  coreutils \
-  diff-so-fancy \
-  fd \
-  fzf \
-  hub \
-  kakoune \
-  ninja \
-  ripgrep \
+common_packages=(
+  bat
+  ccache
+  cmake
+  diff-so-fancy
+  exa
+  fd
+  fish
+  fzf
+  hub
+  jq
+  kakoune
+  ninja
+  ripgrep
   tig
+)
+
+if command -v brew &>/dev/null
+then
+  brew install ${common_packages[*]}
+  brew install coreutils
+  brew tap homebrew/cask-fonts
+  brew cask install font-fantasque-sans-mono
+  brew cask install kitty
+  brew cask install presentation
+fi
 
 command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
+  ${common_packages[*]} \
   base-devel \
   abduco \
   acpi \
   aria2 \
-  bat \
-  ccache \
   cgdb \
   clang \
-  cmake \
   colordiff \
-  diff-so-fancy \
   dvtm \
-  exa \
-  fd \
-  fish \
-  fzf \
   go \
-  hub \
   i3blocks \
   imagemagick \
   imv \
   isync \
-  jq \
   kak-lsp \
-  kakoune \
   khal \
   khard \
   kitty \
@@ -65,19 +68,16 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   ncdu \
   neomutt \
   newsboat \
-  ninja \
   noto-fonts \
   noto-fonts-emoji \
   openssh \
   pass \
   pavucontrol \
   pulseaudio \
-  ripgrep \
   rmlint \
   sway \
   swayidle \
   swaylock \
-  tig \
   ttf-font-awesome \
   vdirsyncer \
   wl-clipboard \
@@ -88,6 +88,3 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
 command -v yay &>/dev/null && yay -S --needed --noconfirm \
   ccls \
   ttf-fantasque-sans-mono
-
-curl -L https://iterm2.com/shell_integration/fish \
-  -o ~/.local/share/iterm2/shell_integration.fish
