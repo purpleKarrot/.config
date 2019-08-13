@@ -56,6 +56,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   kakoune \
   khal \
   khard \
+  kitty \
   libsecret \
   mako \
   meson \
@@ -76,7 +77,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   sway \
   swayidle \
   swaylock \
-  termite \
   tig \
   ttf-font-awesome \
   vdirsyncer \

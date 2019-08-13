@@ -60,6 +60,10 @@ if type direnv >/dev/null ^/dev/null
   eval (direnv hook fish)
 end
 
+if type kitty >/dev/null ^/dev/null
+  kitty +complete setup fish | source
+end
+
 # coreutils
 if type brew >/dev/null ^/dev/null
   set fish_user_paths $fish_user_paths /usr/local/opt/coreutils/libexec/gnubin

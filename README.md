@@ -7,12 +7,12 @@ My ~/.config/ directory
 
 * [fish](https://fishshell.com/)
 * [imv](http://github.com/eXeC64/imv/)
+* [kitty](https://sw.kovidgoyal.net/kitty/)
 * [lf](https://godoc.org/github.com/gokcehan/lf)
 * [mpv](https://mpv.io/)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [newsboat](https://newsboat.org/)
 * [sway](https://swaywm.org/)
-* [termite](https://github.com/thestinger/termite/)
 * [zathura](https://pwmt.org/projects/zathura/)
 
 ## Developer tools
