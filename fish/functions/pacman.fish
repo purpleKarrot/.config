@@ -1,3 +1,3 @@
 function pacman
-  pacman --color auto $argv
+  command pacman --color auto $argv
 end

@@ -22,12 +22,12 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # start a terminal
-bindsym $mod+Return exec termite -e fish
+bindsym $mod+Return exec kitty
 
 # Application Launcher
-bindsym Mod1+space exec termite --class=Launcher -e "bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'"
-bindsym Mod4+Shift+u exec termite --class=Launcher -e "yay --color=auto -Syyu"
-bindsym Mod4+Shift+i exec termite --class=Launcher -e "fish -c pkginstall"
+bindsym Mod1+space exec kitty --class=Launcher bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'
+bindsym Mod4+Shift+u exec kitty --class=Launcher yay --color=auto -Syyu
+bindsym Mod4+Shift+i exec kitty --class=Launcher fish -c pkginstall
 for_window [class="Launcher"] floating enable, border pixel
 
 # start a browser

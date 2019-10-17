@@ -71,6 +71,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   noto-fonts \
   noto-fonts-emoji \
   openssh \
+  pacman-contrib \
   pass \
   pavucontrol \
   pulseaudio \
@@ -78,13 +79,10 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   sway \
   swayidle \
   swaylock \
+  ttf-fantasque-sans-mono \
   ttf-font-awesome \
   vdirsyncer \
   wl-clipboard \
   xdg-user-dirs \
   youtube-dl \
   zathura-pdf-mupdf
-
-command -v yay &>/dev/null && yay -S --needed --noconfirm \
-  ccls \
-  ttf-fantasque-sans-mono

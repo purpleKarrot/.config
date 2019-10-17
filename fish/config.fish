@@ -92,10 +92,6 @@ if not set -q SSH_AUTH_SOCK
   set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
 
-if test -e $XDG_DATA_HOME/iterm2/shell_integration.fish
-  source $XDG_DATA_HOME/iterm2/shell_integration.fish
-end
-
 if status is-login
   if type systemctl >/dev/null ^/dev/null
     systemctl --user import-environment XDG_CONFIG_HOME
@@ -103,7 +99,11 @@ if status is-login
     systemctl --user import-environment XDG_DATA_HOME
   end
 
-  if [ (tty) = '/dev/tty1' ]; and type sway >/dev/null ^/dev/null
-    exec sway
+  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+    if test -e ~/.xinitrc
+      exec startx -- -keeptty
+    else
+      exec sway
+    end
   end
 end
