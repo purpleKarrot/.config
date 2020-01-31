@@ -17,7 +17,8 @@
 	branches = branch -a
 	remotes = remote -v
 
-	meld = difftool -d
+	kitty = difftool --dir-diff
+	meld = difftool --dir-diff --gui
 
 [core]
 	editor = kak
@@ -50,10 +51,15 @@
 	untracked = blue
 
 [diff]
-	tool = meld
+	tool = kitty
+	guitool = meld
 
 [difftool]
 	prompt = false
+	trustExitCode = true
+
+[difftool "kitty"]
+	cmd = kitty +kitten diff $LOCAL $REMOTE
 
 [merge]
 	tool = meld

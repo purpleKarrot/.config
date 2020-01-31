@@ -1,3 +1,3 @@
 function rmdir
-  command rmdir -v $argv
+  command rmdir --verbose $argv
 end

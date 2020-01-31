@@ -26,8 +26,6 @@ bindsym $mod+Return exec kitty
 
 # Application Launcher
 bindsym Mod1+space exec kitty --class=Launcher bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'
-bindsym Mod4+Shift+u exec kitty --class=Launcher yay --color=auto -Syyu
-bindsym Mod4+Shift+i exec kitty --class=Launcher fish -c pkginstall
 for_window [class="Launcher"] floating enable, border pixel
 
 # start a browser

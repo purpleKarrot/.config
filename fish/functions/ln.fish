@@ -1,3 +1,3 @@
 function ln
-  command ln -v $argv
+  command ln --interactive --verbose $argv
 end

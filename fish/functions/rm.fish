@@ -1,3 +1,3 @@
 function rm
-  command rm -iv $argv
+  command rm --interactive=once --verbose $argv
 end

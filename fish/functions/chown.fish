@@ -1,3 +1,3 @@
 function chown
-  command chown -c $argv
+  command chown --changes $argv
 end
