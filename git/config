@@ -74,6 +74,9 @@
 [push]
 	default = current
 
+[pull]
+	rebase = true
+
 [user]
 	name = Daniel Pfeifer
 	email = daniel@pfeifer-mail.de

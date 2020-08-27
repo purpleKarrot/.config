@@ -12,7 +12,11 @@ mkdir -p \
   ~/.cache/mail/gmail \
   ~/.cache/mail/mailbox \
   ~/.cache/mpd/playlists \
+  ~/.local/bin \
+  ~/.local/share/gem \
   ~/.local/share/newsbeuter
+
+ln -s ~/.local/bin ~/.local/share/gem/
 
 common_packages=(
   bat

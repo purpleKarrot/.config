@@ -1,12 +1,17 @@
 #!/usr/bin/fish
 
 if type lsb_release >/dev/null ^/dev/null
-  set __fish_prompt_host ' '(hostname)' ('(lsb_release -is)') '
+  set __fish_prompt_host ' '(lsb_release -is)' '
 else
-  set __fish_prompt_host ' '(hostname)' ('(uname -s)') '
+  set __fish_prompt_host ' '(uname -s)' '
 end
 
 function fish_prompt
+  # if test "$status" -ne 0
+  #   set_color -o f0f0f1 -b 696c77
+  #   echo -n -s ''
+  # end
+
   set -l status_color blue
   set -l git_branch
 
@@ -26,16 +31,17 @@ function fish_prompt
     end
   end
 
-  set_color -o f0f0f1 -b 696c77
-  echo -n -s $__fish_prompt_host
-  set_color 696c77 -b $status_color
-  echo -n -s ''
+  if set -q SSH_TTY
+    set_color -o f0f0f1 -b 696c77
+    echo -n -s $__fish_prompt_host
+    set_color 696c77 -b $status_color
+    echo -n -s ''
+  end
 
+  set_color -o e5e5e6 -b $status_color
   if [ $PWD = ~ ]
-    set_color e5e5e6 -b $status_color
-    echo -n -s '   '
+    echo -n -s ' ~ '
   else
-    set_color -o e5e5e6 -b $status_color
     echo -n -s ' '(basename $PWD)' '
   end
 

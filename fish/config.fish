@@ -21,7 +21,7 @@ set fish_pager_color_completion normal
 set fish_pager_color_description grey
 set fish_pager_color_progress magenta
 
-set fish_user_paths ~/.local/bin
+set fish_user_paths ~/.local/bin (python3 -m site --user-base)/bin
 
 # XDG Base Directories
 set -x XDG_CONFIG_HOME ~/.config
