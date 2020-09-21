@@ -12,7 +12,6 @@ enchant/
 fish/fish_variables
 fish/fishd.*
 git/gitk
-hub
 menus/
 mimeapps.list
 pavucontrol.ini

@@ -27,7 +27,6 @@ common_packages=(
   fd
   fish
   fzf
-  hub
   jq
   kakoune
   ninja
@@ -55,6 +54,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   clang \
   colordiff \
   dvtm \
+  github-cli \
   go \
   i3blocks \
   imagemagick \
