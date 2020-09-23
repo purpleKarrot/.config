@@ -21,7 +21,12 @@ set fish_pager_color_completion normal
 set fish_pager_color_description grey
 set fish_pager_color_progress magenta
 
-set fish_user_paths ~/.local/bin (python3 -m site --user-base)/bin
+set fish_user_paths \
+  ~/.local/bin \
+  (python3 -m site --user-base)/bin \
+  (ruby -e 'puts Gem.user_dir')/bin \
+  /usr/local/opt/coreutils/libexec/gnubin \
+  /usr/local/opt/llvm/bin
 
 # XDG Base Directories
 set -x XDG_CONFIG_HOME ~/.config
@@ -58,11 +63,6 @@ end
 
 if type kitty >/dev/null ^/dev/null
   kitty +complete setup fish | source
-end
-
-# coreutils
-if type brew >/dev/null ^/dev/null
-  set fish_user_paths $fish_user_paths /usr/local/opt/coreutils/libexec/gnubin
 end
 
 # Editor

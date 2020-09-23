@@ -18,12 +18,11 @@ My ~/.config/ directory
 ## Developer tools
 
 * [ccache](https://ccache.samba.org/)
-* [ccls](https://github.com/MaskRay/ccls)
 * [cgdb](https://cgdb.github.io/)
 * [clang](https://clang.llvm.org/)
 * [cmake](https://cmake.org/)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-* [hub](https://hub.github.com/)
+* [gh](https://cli.github.com/)
 * [kak-lsp](https://github.com/ul/kak-lsp)
 * [kakoune](http://kakoune.org/)
 * [ninja](https://ninja-build.org/)

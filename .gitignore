@@ -11,7 +11,9 @@ dconf/
 enchant/
 fish/fish_variables
 fish/fishd.*
+gh/hosts.yml
 git/gitk
+htop/
 menus/
 mimeapps.list
 pavucontrol.ini

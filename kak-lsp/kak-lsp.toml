@@ -58,8 +58,8 @@ command = "pyls"
 
 [language.c_cpp]
 extensions = ["c", "h", "cc", "hh", "cpp", "hpp", "cxx", "hxx"]
-roots = ["compile_commands.json", ".ccls", ".git"]
-command = "ccls"
+roots = ["compile_commands.json", ".git"]
+command = "clangd"
 
 [language.haskell]
 extensions = ["hs"]
