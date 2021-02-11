@@ -22,33 +22,10 @@
 
 [core]
 	editor = kak
+	pager = delta --light
 
 [color]
 	ui = auto
-
-[color "diff"]
-	meta = 16 bold
-	commit = green bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 224
-	newNormal = green bold
-	newHighlight = green bold 157
-
-[color "branch"]
-	current = 16 reverse
-	local = 16
-	remote = green
-
-[color "status"]
-	added = green
-	changed = 16
-	untracked = blue
 
 [diff]
 	tool = kitty
@@ -67,15 +44,14 @@
 [mergetool]
 	prompt = false
 
-[pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
-
 [push]
 	default = current
 
 [pull]
 	rebase = true
+
+[rebase]
+	autostash = true
 
 [user]
 	name = Daniel Pfeifer

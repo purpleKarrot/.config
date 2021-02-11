@@ -18,11 +18,11 @@ common_packages=(
   bat
   ccache
   cmake
-  diff-so-fancy
   exa
   fd
   fish
   fzf
+  git-delta
   jq
   kakoune
   ninja
@@ -30,14 +30,14 @@ common_packages=(
   tig
 )
 
-if command -v brew &>/dev/null
+if [ "$(uname -s)" == "Darwin" ]
 then
-  brew install ${common_packages[*]}
-  brew install coreutils
-  brew tap homebrew/cask-fonts
-  brew cask install font-fantasque-sans-mono
-  brew cask install kitty
-  brew cask install presentation
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
+  xcode-select --install
+  sudo port install ${common_packages[*]}
+  sudo port install coreutils
+  sudo port install gh # github-cli
+  sudo port install direnv
 fi
 
 command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
@@ -48,7 +48,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   aria2 \
   cgdb \
   clang \
-  colordiff \
   dvtm \
   github-cli \
   go \

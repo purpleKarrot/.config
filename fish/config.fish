@@ -25,8 +25,8 @@ set fish_user_paths \
   ~/.local/bin \
   (python3 -m site --user-base)/bin \
   (ruby -e 'puts Gem.user_dir')/bin \
-  /usr/local/opt/coreutils/libexec/gnubin \
-  /usr/local/opt/llvm/bin
+  /opt/local/bin /opt/local/sbin \
+  /opt/local/libexec/gnubin
 
 # XDG Base Directories
 set -x XDG_CONFIG_HOME ~/.config
@@ -51,14 +51,8 @@ if type exa >/dev/null ^/dev/null
   alias tree="exa --tree"
 end
 
-if type colordiff >/dev/null ^/dev/null
-  alias diff="colordiff -Nuar"
-else
-  alias diff="diff -Nuar"
-end
-
 if type direnv >/dev/null ^/dev/null
-  eval (direnv hook fish)
+  direnv hook fish | source
 end
 
 if type kitty >/dev/null ^/dev/null
@@ -75,7 +69,7 @@ set -x FZF_DEFAULT_OPTS '--color=light'
 
 # Go
 set -x GOBIN ~/.local/bin
-set -x GOPATH ~/.cache/go ~/GoProjects
+set -x GOPATH ~/.cache/go
 
 # Make
 set -x MAKEFLAGS -j(echo (nproc) + 1 | bc) -l(nproc)
