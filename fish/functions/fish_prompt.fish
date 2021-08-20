@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-if type lsb_release >/dev/null ^/dev/null
+if type --query lsb_release
   set __fish_prompt_host ' '(lsb_release -is)' '
 else
   set __fish_prompt_host ' '(uname -s)' '
@@ -15,15 +15,15 @@ function fish_prompt
   set -l status_color blue
   set -l git_branch
 
-  if git status -s >/dev/null ^/dev/null
-    set -l ref (git symbolic-ref HEAD ^/dev/null)
+  if git status -s >/dev/null 2>/dev/null
+    set -l ref (git symbolic-ref HEAD 2>/dev/null)
     if [ $ref ]
       set git_branch (echo $ref | sed -e 's|^refs/heads/| |')
     else
-      set git_branch '➦ '(git rev-parse --short HEAD ^/dev/null)
+      set git_branch '➦ '(git rev-parse --short HEAD 2>/dev/null)
     end
     set git_branch ' '$git_branch' '
-    set -l dirty (git status -s --untracked-files=no --ignore-submodules=dirty --porcelain ^/dev/null | wc -l)
+    set -l dirty (git status -s --untracked-files=no --ignore-submodules=dirty --porcelain 2>/dev/null | wc -l)
     if test $dirty -ne 0
       set status_color red
     else

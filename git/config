@@ -27,6 +27,11 @@
 [color]
 	ui = auto
 
+[color "status"]
+	added = green
+	changed = 16
+	untracked = blue
+
 [diff]
 	tool = kitty
 	guitool = meld
@@ -38,8 +43,8 @@
 [difftool "kitty"]
 	cmd = kitty +kitten diff $LOCAL $REMOTE
 
-[merge]
-	tool = meld
+[init]
+	defaultBranch = master
 
 [mergetool]
 	prompt = false
