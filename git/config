@@ -19,10 +19,10 @@
 
 	kitty = difftool --dir-diff
 	meld = difftool --dir-diff --gui
+	root = rev-parse --show-toplevel
 
 [core]
 	editor = kak
-	pager = delta --light
 
 [color]
 	ui = auto

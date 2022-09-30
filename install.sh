@@ -32,9 +32,11 @@ common_packages=(
 
 if [ "$(uname -s)" == "Darwin" ]
 then
-  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
   xcode-select --install
-  sudo port install ${common_packages[*]}
+  softwareupdate --install --all
+  softwareupdate --install-rosetta --agree-to-license
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
+  # sudo port install ${common_packages[*]}
   sudo port install coreutils
   sudo port install gh # github-cli
   sudo port install direnv

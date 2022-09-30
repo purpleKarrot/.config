@@ -44,15 +44,6 @@ set -x WEECHAT_HOME $XDG_CONFIG_HOME/weechat
 # alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
 # alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
 
-if type --query bat
-  alias cat=bat
-end
-
-if type --query exa
-  alias ls="exa --group --group-directories-first"
-  alias tree="exa --tree"
-end
-
 if type --query direnv
   direnv hook fish | source
 end
