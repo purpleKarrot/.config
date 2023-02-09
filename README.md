@@ -21,7 +21,6 @@ My ~/.config/ directory
 * [cgdb](https://cgdb.github.io/)
 * [clang](https://clang.llvm.org/)
 * [cmake](https://cmake.org/)
-* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * [gh](https://cli.github.com/)
 * [kak-lsp](https://github.com/ul/kak-lsp)
 * [kakoune](http://kakoune.org/)

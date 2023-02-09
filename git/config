@@ -21,9 +21,6 @@
 	meld = difftool --dir-diff --gui
 	root = rev-parse --show-toplevel
 
-[core]
-	editor = kak
-
 [color]
 	ui = auto
 

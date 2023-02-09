@@ -26,8 +26,8 @@ if [ (uname -s) = "Darwin" ]
   set -a fish_user_paths \
     (python3 -m site --user-base)/bin \
     (ruby -e 'puts Gem.user_dir')/bin \
-    /opt/local/bin /opt/local/sbin \
-    /opt/local/libexec/gnubin
+    /opt/homebrew/bin /opt/homebrew/sbin \
+    /opt/homebrew/opt/coreutils/libexec/gnubin
 end
 
 # XDG Base Directories
@@ -49,7 +49,6 @@ if type --query direnv
 end
 
 if type --query kitty
-  kitty +complete setup fish | source
   alias ssh="kitty +kitten ssh"
 end
 

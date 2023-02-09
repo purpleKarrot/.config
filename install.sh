@@ -22,7 +22,6 @@ common_packages=(
   fd
   fish
   fzf
-  git-delta
   jq
   kakoune
   ninja
@@ -35,11 +34,10 @@ then
   xcode-select --install
   softwareupdate --install --all
   softwareupdate --install-rosetta --agree-to-license
-  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
-  # sudo port install ${common_packages[*]}
-  sudo port install coreutils
-  sudo port install gh # github-cli
-  sudo port install direnv
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew tap homebrew/cask-fonts
+  brew install ${common_packages[*]} coreutils direnv gh
+  brew install --cask font-fantasque-sans-mono kitty
 fi
 
 command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
