@@ -1,5 +1,6 @@
 [advice]
 	detachedHead = false
+	skippedCherryPicks = false
 
 [alias]
 	# Amend the currently staged files to the latest commit
