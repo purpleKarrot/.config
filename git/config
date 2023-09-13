@@ -1,4 +1,5 @@
 [advice]
+	addIgnoredFile = false
 	detachedHead = false
 	skippedCherryPicks = false
 
