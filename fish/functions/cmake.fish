@@ -10,7 +10,7 @@ function cmake
     command cmake $argv
   else
     set -x CMAKE_C_COMPILER_LAUNCHER (which ccache)
-    set -x DCMAKE_CXX_COMPILER_LAUNCHER (which ccache)
+    set -x CMAKE_CXX_COMPILER_LAUNCHER (which ccache)
 
     command cmake \
       -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON \

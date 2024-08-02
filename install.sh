@@ -18,7 +18,8 @@ common_packages=(
   bat
   ccache
   cmake
-  exa
+  direnv
+  eza
   fd
   fish
   fzf
@@ -35,8 +36,7 @@ then
   softwareupdate --install --all
   softwareupdate --install-rosetta --agree-to-license
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew tap homebrew/cask-fonts
-  brew install ${common_packages[*]} coreutils direnv gh
+  brew install ${common_packages[*]} coreutils gh
   brew install --cask font-fantasque-sans-mono kitty
 fi
 

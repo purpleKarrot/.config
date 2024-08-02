@@ -48,8 +48,13 @@ if type --query direnv
   direnv hook fish | source
 end
 
+if type --query eza
+  alias ls="eza"
+  alias tree="eza --tree"
+end
+
 if type --query kitty
-  alias ssh="kitty +kitten ssh"
+  alias ssh="kitten ssh"
 end
 
 # Editor

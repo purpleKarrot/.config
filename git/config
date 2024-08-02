@@ -40,7 +40,7 @@
 	trustExitCode = true
 
 [difftool "kitty"]
-	cmd = kitty +kitten diff $LOCAL $REMOTE
+	cmd = kitten diff $LOCAL $REMOTE
 
 [init]
 	defaultBranch = master
@@ -60,6 +60,3 @@
 [user]
 	name = Daniel Pfeifer
 	email = daniel@pfeifer-mail.de
-
-[includeIf "gitdir:~/Work/"]
-	path = config-work
