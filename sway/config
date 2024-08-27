@@ -3,7 +3,7 @@ set $mod Mod4
 set $alt Mod1
 
 # Font for window titles and status bar
-font pango:Fantasque Sans Mono, FontAwesome 11
+font pango:Fantasque Sans Mono, FontAwesome 16
 
 workspace_layout default
 
@@ -185,14 +185,17 @@ bar {
     }
 }
 
-output eDP-1 {
-    background ~/.cache/wallpaper.png stretch
+output * {
+    background ~/.config/wallpaper.svg fit #f0f0f1
 }
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
+exec gnome-keyring-daemon --start --components=pkcs11\,secrets
+
 exec swayidle -w \
-    timeout 300 'swaylock -f -i ~/.cache/wallpaper.png' \
-    timeout 600 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"' \
-   before-sleep 'swaylock -f -i ~/.cache/wallpaper.png'
+    timeout  600 'swaylock -f -i ~/.config/wallpaper.svg' \
+    timeout 1800 'swaymsg "output * dpms off"' \
+          resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -i ~/.config/wallpaper.svg'
 
 exec mako

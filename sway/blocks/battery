@@ -1,8 +1,11 @@
 #!/usr/bin/fish
 
 set acpi (acpi -b | perl -nle 'print "$1\n$2" if m{Battery 0: (\w+), (\d+)%}')
-set percent $acpi[2]
+if not set -q acpi[2]
+  return
+end
 
+set percent $acpi[2]
 if [ $percent -lt 20 ]
   set label 
 else if [ $percent -lt 40 ]

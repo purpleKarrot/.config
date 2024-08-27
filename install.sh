@@ -46,10 +46,12 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   abduco \
   acpi \
   aria2 \
+  bc \
   cgdb \
   clang \
   dvtm \
   github-cli \
+  gnome-keyring \
   go \
   i3blocks \
   imagemagick \
@@ -61,6 +63,8 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   kitty \
   libsecret \
   mako \
+  man-db \
+  man-pages \
   meson \
   mpd \
   mpv \
@@ -76,6 +80,7 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   pulseaudio \
   rmlint \
   sway \
+  swaybg \
   swayidle \
   swaylock \
   ttf-fantasque-sans-mono \
@@ -83,5 +88,6 @@ command -v pacman &>/dev/null && sudo pacman -S --needed --noconfirm \
   vdirsyncer \
   wl-clipboard \
   xdg-user-dirs \
-  youtube-dl \
+  xdg-utils \
+  yt-dlp \
   zathura-pdf-mupdf
