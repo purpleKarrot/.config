@@ -1,9 +1,0 @@
-[Unit]
-Description=disks automounting
-
-[Service]
-ExecStart=/usr/bin/udiskie -2
-Restart=always
-
-[Install]
-WantedBy=default.target

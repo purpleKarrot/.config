@@ -1,9 +1,11 @@
+include /etc/sway/config.d/*
+
 # Use windows key
 set $mod Mod4
 set $alt Mod1
 
 # Font for window titles and status bar
-font pango:Fantasque Sans Mono, FontAwesome 16
+font pango:Fantasque Sans Mono, FontAwesome 12
 
 workspace_layout default
 
@@ -29,7 +31,7 @@ bindsym Mod1+space exec kitty --class=Launcher bash -c 'compgen -c | sort -u | f
 for_window [class="Launcher"] floating enable, border pixel
 
 # start a browser
-bindsym $mod+Shift+Return exec xdg-open https://start.duckduckgo.com
+bindsym $mod+Shift+Return exec xdg-open https://kagi.com
 
 # music
 bindsym $mod+m exec clerk
@@ -133,7 +135,7 @@ bindsym $mod+r mode "resize"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id swaylock -i "$XDG_CACHE_HOME"/wallpaper.png, mode "default"
+    bindsym l exec --no-startup-id swaylock -i ~/.config/wallpaper.svg, mode "default"
     bindsym e exec --no-startup-id swaymsg exit
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
@@ -185,12 +187,12 @@ bar {
     }
 }
 
+input * natural_scroll enabled
+
 output * {
     background ~/.config/wallpaper.svg fit #f0f0f1
+    scale 1.5
 }
-
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK
-exec gnome-keyring-daemon --start --components=pkcs11\,secrets
 
 exec swayidle -w \
     timeout  600 'swaylock -f -i ~/.config/wallpaper.svg' \

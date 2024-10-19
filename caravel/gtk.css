@@ -1,9 +1,0 @@
-@binding-set Caravel {
-  bind "q" { "quit" () };
-  bind "Escape" { "show-about-dialog" () };
-  bind "<Control>b" { "execute-process" ("pwd") };
-}
-
-window {
-  -gtk-key-bindings: Caravel;
-}

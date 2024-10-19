@@ -21,9 +21,16 @@ set fish_pager_color_completion normal
 set fish_pager_color_description grey
 set fish_pager_color_progress magenta
 
-set -a fish_user_paths ~/.local/bin \
-  (python3 -m site --user-base)/bin \
-  (ruby -e 'puts Gem.user_dir')/bin
+set -a fish_user_paths ~/.local/bin
+
+if type --query python3
+  set -a fish_user_paths (python3 -m site --user-base)/bin
+end
+
+if type --query ruby
+  set -a fish_user_paths (ruby -e 'puts Gem.user_dir')/bin
+end
+
 if [ (uname -s) = "Darwin" ]
   set -a fish_user_paths \
     /opt/homebrew/bin /opt/homebrew/sbin \
@@ -34,15 +41,6 @@ end
 set -x XDG_CONFIG_HOME ~/.config
 set -x XDG_CACHE_HOME ~/.cache
 set -x XDG_DATA_HOME ~/.local/share
-
-# workaround xdg violations
-set -x CCACHE_DIR $XDG_CACHE_HOME/ccache
-set -x NOTMUCH_CONFIG $XDG_CONFIG_HOME/notmuch/notmuchrc
-set -x NMBGIT $XDG_DATA_HOME/notmuch/nmbug
-set -x WEECHAT_HOME $XDG_CONFIG_HOME/weechat
-
-# alias mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
-# alias msmtp='msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc'
 
 if type --query direnv
   direnv hook fish | source
@@ -69,29 +67,9 @@ set -x FZF_DEFAULT_OPTS '--color=light'
 set -x GOBIN ~/.local/bin
 set -x GOPATH ~/.cache/go
 
-# Make
-set -x MAKEFLAGS -j(echo (nproc) + 1 | bc) -l(nproc)
-
 # Node
 set -x NPM_CONFIG_PREFIX ~/.local
 
-# SSH key agent
-if not set -q SSH_AUTH_SOCK
-  set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gcr/ssh"
-end
-
-if status is-login
-  if type --query systemctl
-    systemctl --user import-environment XDG_CONFIG_HOME
-    systemctl --user import-environment XDG_CACHE_HOME
-    systemctl --user import-environment XDG_DATA_HOME
-  end
-
-  if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-    if test -e ~/.xinitrc
-      exec startx -- -keeptty
-    else
-      exec sway
-    end
-  end
+if test -z "$WAYLAND_DISPLAY" -a "$XDG_VTNR" = 1
+    exec ssh-agent sway
 end
