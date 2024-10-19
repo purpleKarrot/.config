@@ -1,9 +1,0 @@
-[Unit]
-Description=Hourly clean and update news feeds
-
-[Timer]
-OnBootSec=1min
-OnCalendar=hourly
-
-[Install]
-WantedBy=timers.target
