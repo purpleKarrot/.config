@@ -1,0 +1,20 @@
+{
+  "auto_install_extensions": {
+    "neocmake": true,
+    "fish": true
+  },
+  "buffer_font_family": "Fantasque Sans Mono",
+  "buffer_font_size": 16,
+  "file_types": {
+    "YAML": [".clang-format", ".clang-tidy"]
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "terminal": {
+    "line_height": "standard"
+  },
+  "ui_font_size": 16
+}

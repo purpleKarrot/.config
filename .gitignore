@@ -1,6 +1,8 @@
-*
-!fish
-!git
-!kitty
-!tig
-!README.md
+dconf/
+enchant/
+fish/fish_variables
+fish/fishd.*
+gh/hosts.yml
+github-copilot
+swiftpm
+zed/prompts

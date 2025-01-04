@@ -1,0 +1,10 @@
+aliases:
+  co: pr checkout
+browser:
+editor:
+git_protocol: https
+http_unix_socket:
+pager:
+prefer_editor_prompt: disabled
+prompt: enabled
+version: 1
