@@ -42,6 +42,10 @@ set -x XDG_CONFIG_HOME ~/.config
 set -x XDG_CACHE_HOME ~/.cache
 set -x XDG_DATA_HOME ~/.local/share
 
+if command --query cx
+  cx completion fish | source
+end
+
 if type --query direnv
   direnv hook fish | source
 end

@@ -1,0 +1,3 @@
+workspace: [~/Projects, ~/Work]
+generator: Ninja Multi-Config
+config: Release

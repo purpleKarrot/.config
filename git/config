@@ -23,6 +23,8 @@
 	meld = difftool --dir-diff --gui
 	root = rev-parse --show-toplevel
 
+	ref = show --no-patch --pretty=reference
+
 [color]
 	ui = auto
 
@@ -30,6 +32,9 @@
 	added = green
 	changed = 16
 	untracked = blue
+
+[commit]
+	gpgsign = true
 
 [diff]
 	tool = kitty
@@ -60,3 +65,4 @@
 [user]
 	name = Daniel Pfeifer
 	email = daniel@pfeifer-mail.de
+	signingkey = 04F22A9DE0B13A16
