@@ -1,0 +1,17 @@
+#!/usr/bin/fish
+
+set ticker (curl --silent https://www.bitstamp.net/api/ticker/)
+
+set num (echo $ticker | jq '100000000 / (.last | tonumber) | floor')
+set hours (math "floor($num / 100)")
+set minutes (math "$num % 100")
+set time (printf "%01d:%02d" $hours $minutes)
+
+set change (echo $ticker | jq '.percent_change_24 | tonumber')
+if [ $change -lt -3 ]
+    echo "<span foreground=\"#ca1243\">$time</span>"
+else if [ $change -gt 3 ]
+    echo "<span foreground=\"#50a14f\">$time</span>"
+else
+    echo $time
+end
