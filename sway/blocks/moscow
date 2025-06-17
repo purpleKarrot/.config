@@ -5,7 +5,7 @@ set ticker (curl --silent https://www.bitstamp.net/api/ticker/)
 set num (echo $ticker | jq '100000000 / (.last | tonumber) | floor')
 set hours (math "floor($num / 100)")
 set minutes (math "$num % 100")
-set time (printf "%01d:%02d" $hours $minutes)
+set time (printf "%02d:%02d" $hours $minutes)
 
 set change (echo $ticker | jq '.percent_change_24 | tonumber')
 if [ $change -lt -3 ]

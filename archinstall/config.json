@@ -1,0 +1,53 @@
+{
+  "archinstall-language": "English",
+  "audio_config": {
+    "audio": "pipewire"
+  },
+  "bootloader": "Systemd-boot",
+  "custom_commands": [],
+  "kernels": ["linux"],
+  "locale_config": {
+    "kb_layout": "us",
+    "sys_enc": "UTF-8",
+    "sys_lang": "en_US.UTF-8"
+  },
+  "network_config": {
+    "type": "iso"
+  },
+  "ntp": true,
+  "packages": [
+    "ccache",
+    "cmake",
+    "fish",
+    "i3blocks",
+    "imagemagick",
+    "kakoune",
+    "kitty",
+    "ninja",
+    "noto-fonts",
+    "noto-fonts-emoji",
+    "openssh",
+    "pacman-contrib",
+    "sway",
+    "swaybg",
+    "swayidle",
+    "swaylock",
+    "ttf-fantasque-sans-mono",
+    "ttf-font-awesome",
+    "vulkan-intel"
+  ],
+  "parallel_downloads": 5,
+  "profile_config": {
+    "gfx_driver": null,
+    "greeter": null,
+    "profile": {
+      "custom_settings": {},
+      "details": [],
+      "main": "Minimal"
+    }
+  },
+  "services": ["sshd.service", "paccache.timer"],
+  "swap": true,
+  "timezone": "Europe/Zurich",
+  "version": null
+}
