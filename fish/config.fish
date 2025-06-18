@@ -74,6 +74,12 @@ set -x GOPATH ~/.cache/go
 # Node
 set -x NPM_CONFIG_PREFIX ~/.local
 
+if status is-interactive
+    set -x GPG_TTY (tty)
+    set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+end
+
 if test -z "$WAYLAND_DISPLAY" -a "$XDG_VTNR" = 1
-    exec ssh-agent sway
+    exec sway
 end

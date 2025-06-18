@@ -17,24 +17,36 @@
   "ntp": true,
   "packages": [
     "ccache",
+    "clang",
     "cmake",
     "fish",
+    "git",
+    "gnupg",
     "i3blocks",
     "imagemagick",
+    "jq",
     "kakoune",
     "kitty",
+    "less",
+    "mako",
     "ninja",
     "noto-fonts",
     "noto-fonts-emoji",
+    "npm",
+    "openbsd-netcat",
     "openssh",
     "pacman-contrib",
+    "pcsc-tools",
     "sway",
     "swaybg",
     "swayidle",
     "swaylock",
+    "tig",
+    "tree",
     "ttf-fantasque-sans-mono",
     "ttf-font-awesome",
-    "vulkan-intel"
+    "vulkan-intel",
+    "zed"
   ],
   "parallel_downloads": 5,
   "profile_config": {
@@ -46,7 +58,7 @@
       "main": "Minimal"
     }
   },
-  "services": ["sshd.service", "paccache.timer"],
+  "services": ["paccache.timer", "pcscd.service", "sshd.service"],
   "swap": true,
   "timezone": "Europe/Zurich",
   "version": null
