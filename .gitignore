@@ -1,8 +1,12 @@
+chromium/
+configstore/
 dconf/
 enchant/
-fish/fish_variables
 fish/fishd.*
+fish/fish_variables
 gh/hosts.yml
 github-copilot
+go/telemetry
+pulse/
 swiftpm
 zed/prompts

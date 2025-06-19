@@ -59,6 +59,13 @@ if type --query kitty
   alias ssh="kitten ssh"
 end
 
+if not command --query zed; and command --query zeditor
+  alias zed=zeditor
+end
+
+# Docker
+set -x DOCKER_HOST unix:///run/user/(id -u)/podman/podman.sock
+
 # Editor
 set -x VISUAL kak
 set -x EDITOR kak

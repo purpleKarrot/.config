@@ -1,12 +1,20 @@
 {
   "auto_install_extensions": {
     "neocmake": true,
-    "fish": true
+    "fish": true,
+    "git-firefly": true,
+    "sql": true,
+    "toml": true
   },
   "buffer_font_family": "Fantasque Sans Mono",
   "buffer_font_size": 16,
   "file_types": {
     "YAML": [".clang-format", ".clang-tidy"]
+  },
+  "languages": {
+    "CMake": {
+      "format_on_save": "off"
+    }
   },
   "theme": {
     "mode": "system",
